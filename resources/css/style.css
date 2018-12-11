@@ -15,6 +15,8 @@
     --rgba-primary-shade-2: rgba(73, 174, 240, 0.3);
     --rgba-primary-shade-3: rgba(8, 144, 233, 0.3);
     --rgba-primary-shade-4: rgba(4, 104, 170, 0.3);
+
+    --linear-gradent-shade: rgba(0, 0, 0, 0.7);
 }
 
 * {
@@ -197,8 +199,7 @@ section {
 =            HEADER SECTION            =
 =============================================*/
 header {
-    /*rgba(0,0,0,0.7)*/
-    background-image: linear-gradient(var(--rgba-primary-shade-0), var(--rgba-primary-shade-0)), url(../img/header-bg.jpg);
+    background-image: linear-gradient(var(--linear-gradent-shade), var(--linear-gradent-shade)), url(../img/header-bg.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
