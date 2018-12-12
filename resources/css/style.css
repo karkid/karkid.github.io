@@ -9,6 +9,7 @@
     --color-primary-2: #49AEF0;
     --color-primary-3: #0890E9;
     --color-primary-4: #0468AA;
+    --color-black: #555;
     /* As RGBa codes */
     --rgba-primary-shade-0: rgba(32, 157, 238, 0.3);
     --rgba-primary-shade-1: rgba(117, 193, 242, 0.3);
@@ -29,7 +30,7 @@
 html,
 body {
     background-color: #fff;
-    color: #fff;
+    color: var(--color-black);
     font-family: 'Lato', 'Arial', sans-serif;
     font-weight: 300;
     font-size: 10px;
@@ -47,6 +48,11 @@ body {
     display: block;
     height: 0;
     visibility: hidden;
+}
+
+@font-face {
+    font-family: "Halimun";
+    src: url(../../venders/fonts/Halimun.ttf) format("truetype");
 }
 
 /*
@@ -129,38 +135,68 @@ p {
 =            REUSABLE COMPONENT            =
 =============================================*/
 .row {
-    max-width: 1140px;
-    margin: 0 auto;
+    margin: 0 8%;
 }
 
 section {
-    padding: 80px 0px;
+    padding: 80px 0;
+}
+
+.box {
+    padding: 1%;
 }
 
 .doubleUnderline {
     /* border-bottom: 3px double #555; */
-    border-bottom: 3px double #fff;
+    border-bottom: 4px double var(--rgba-primary-shade-0);
 }
 
 .center {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
 .avatar-big {
     margin: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     border: 5px solid var(--color-primary-4);
     border-radius: 50%;
 }
 
 .avatar-big img {
-    height: 150px;
-    width: 150px;
+    height: 500px;
+    width: 500px;
     border-radius: 50%;
     vertical-align: middle;
+}
+
+/*
+/*----------  BLOCKQUOTE  ----------*/
+
+blockquote {
+    border-left: 10px solid var(--rgba-primary-shade-4);
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+    content: open-quote;
+    font-size: 1000%;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote h2 {
+  display: inline;
 }
 
 /*
@@ -199,6 +235,7 @@ section {
 =            HEADER SECTION            =
 =============================================*/
 header {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--linear-gradent-shade)), to(var(--linear-gradent-shade))), url(../img/header-bg.jpg);
     background-image: linear-gradient(var(--linear-gradent-shade), var(--linear-gradent-shade)), url(../img/header-bg.jpg);
     background-size: cover;
     background-position: center;
@@ -206,38 +243,91 @@ header {
     height: 100vh;
 }
 
-.intro {
-    background-color: var(--rgba-primary-shade-1);
-    box-sizing: border-box;
+.logo { 
+    position: absolute;
+    display: none;
+    left: 0;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 2px;
 }
 
-.intro-name {
-    text-align: center;
-}
-
-.intro-name span {
-    text-align: center;
-    font-size: 800%;
+.signature {
+    position: absolute;
+    left: 0;
+    font-family: 'Halimun', 'Arial', sans-serif;
     font-weight: 300;
-    text-transform: uppercase;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.intro-me {
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 20px;
-}
-
-.intro-me h4 {
-    font-weight: 300;
+    font-size: 300%;
     color: #fff;
-}
-
-.intro-cv {
+    margin-top: 25px;
+    margin-left: 5px;
     text-align: center;
-    margin-bottom: 20px;
+    transform: rotate(-5deg);
 }
 
+.main-nav {
+    float: right;
+    list-style: none;
+    margin-top: 55px;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 180%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid var(--color-primary-4);
+}
+
+.tag-ln {
+    margin-top: 15%;
+    box-sizing: border-box;
+    text-align: center;
+}
 /*=====  End of HEADER SECTION  ======*/
+
+/*
+/*=============================================
+=            ABOUT SECTION            =
+=============================================*/
+.section-about {
+}
+.about-box {
+    margin-top: 30px;
+}
+
+.about-screen {
+    text-align: center;
+    width: 337px;
+    height: 440px;
+    border-radius: 50%;
+}
+
+.about-ln1 p {
+    font-style: italic;
+    font-size: 300%;
+}
+
+.about-ln2 p {
+    font-size: 600%;
+}
+
+.about-ln3 p {
+    text-align: center;
+}
+/*=====  End of ABOUT SECTION  ======*/
