@@ -204,6 +204,96 @@ section {
     margin: 0 auto;
     margin-top: 30px;
 }
+/*
+/*----------  GEOMETRY  ----------*/
+.triangle {
+    width: 0px;
+    height: 0px;
+    margin-top: 5px;
+}
+
+.triangle-left {
+    float: left;
+    margin-left: 50%;
+    border-left: 20px solid var(--color-primary-4);
+    border-right: 0;
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+}
+
+
+.triangle-left * {
+    margin-left: 10px;
+    float: left;
+}
+
+.triangle-right {
+    float: right;
+    margin-right: calc(50% - 10px);
+    border-right: 20px solid var(--color-primary-4);
+    border-left: 0;
+    border-bottom: 20px solid transparent;
+    border-top: 20px solid transparent;
+}
+
+.triangle-right * {
+    margin-right: 20px;
+    float: right;
+}
+
+.line-v {
+    width: 0;
+    border: 5px solid var(--color-primary-4);
+    margin-left: 50%;
+}
+
+.line-h {
+    height: 0;
+    border: 5px solid var(--color-primary-4);
+}
+
+.line-h100 {
+    height: 100px;
+}
+
+.line-h150 {
+    height: 150px;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 5px solid var(--color-primary-4);
+}
+/*
+/*----------  TIMELINE  ----------*/
+.timeline-vertical {
+    text-align: center;
+}
+
+.timeline-vertical-event {
+    padding: 5px;
+}
+
+.timeline-vertical-right-event {
+    float: right;
+    margin-right: 90px;
+    text-align: right;
+}
+
+.timeline-vertical-left-event {
+    float: left;
+    margin-left: 80px;
+    text-align: left;
+}
+
+.timeline-vertical-date {
+    line-height: 0;
+    font-size: 200%;
+    font-weight: 400;
+    color: var(--color-primary-4);
+}
 
 /*
 /*----------  BLOCKQUOTE  ----------*/
@@ -397,7 +487,6 @@ header {
     background-color: var(--color-primary-white-1);
 }
 
-/* Timeline */
 .company-link a {
     font-size: 200%;
     font-weight: 400;
@@ -422,76 +511,66 @@ header {
     border-bottom: 2px solid var(--color-primary-4);
 }
 
-.timeline {
+/*=====  End of WORK SECTION  ======*/
+/*
+/*=============================================
+=            EDUCATION SECTION            =
+=============================================*/
+
+.education-event {
+    border-top: 2px dashed var(--color-primary-4);
+}
+/* .education-event:after {
+    position: absolute;
+    display: inline-block;
+    width: 0;
+    height:0;
+    margin-top: -55px;
+    border-radius: 50%;
+    border: 10px solid var(--color-primary-4);
+    content: "";
+    text-align: center;
+}  */
+.education-event-line {
+    margin-top: 10px;
     text-align: center;
 }
-
-.timeline-right-event {
-    float: right;
-    margin-right: 90px;
-    text-align: right;
+.education-event-line i {
+    font-size: 300%;
+}
+.education-event-line i span {
+    display: inline-block;
+    font-size: 80%;
+    font-style: italic;
+    margin-left: 5px;
+    line-height: 12px;
 }
 
-.timeline-left-event {
-    float: left;
-    margin-left: 80px;
+.education-event-detail {
     text-align: left;
 }
 
-.timeline-date {
-    line-height: 0;
-    font-size: 200%;
-    font-weight: 400;
-    color: var(--color-primary-4);
-}
 
-.triangle {
-    width: 0px;
-    height: 0px;
-    margin-top: 5px;
-}
+table {
+    width:100%;
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 15px;
+    text-align: left;
+  }
+  table#t01 tr:nth-child(even) {
+    background-color: #eee;
+  }
+  table#t01 tr:nth-child(odd) {
+   background-color: #fff;
+  }
+  table#t01 th {
+    background-color: black;
+    color: white;
+  }
+/*=====  End of EDUCATION SECTION  ======*/
 
-.triangle-left {
-    float: left;
-    margin-left: 50%;
-    border-left: 20px solid var(--color-primary-4);
-    border-right: 0;
-    border-bottom: 20px solid transparent;
-    border-top: 20px solid transparent;
-}
-
-
-.triangle-left * {
-    margin-left: 10px;
-    float: left;
-}
-
-.triangle-right {
-    float: right;
-    margin-right: calc(50% - 10px);
-    border-right: 20px solid var(--color-primary-4);
-    border-left: 0;
-    border-bottom: 20px solid transparent;
-    border-top: 20px solid transparent;
-}
-
-.triangle-right * {
-    margin-right: 20px;
-    float: right;
-}
-
-.line {
-    width: 0;
-    border: 5px solid var(--color-primary-4);
-    margin-left: 50%;
-}
-
-.line.line-100 {
-    height: 100px;
-}
-
-.line.line-150 {
-    height: 150px;
-}
-
-/*=====  End of WORK SECTION  ======*/
