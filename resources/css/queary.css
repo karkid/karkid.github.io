@@ -1,0 +1,76 @@
+@media only screen and (max-width: 2560px) {}
+
+@media only screen and (max-width: 1024px) {
+    .about-box {
+        width: 100%
+    }
+
+    .about-screen {
+        float: none;
+        display: block;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .main-nav {
+        display: none;
+    }
+
+    /*
+    /*=============================================
+    =            WORK SECTION            =
+    =============================================*/
+
+    .triangle-left {
+        margin-left: 0;
+    }
+
+    .triangle-right {
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+        border-left: 20px solid var(--color-primary-4);
+        border-right: 0;
+    }
+
+    .triangle-right * {
+        margin-left: 10px;
+        float: left;
+    }
+
+    .line-v {
+        width: 0;
+        border: 5px solid var(--color-primary-4);
+        margin-left: 0;
+    }
+
+    .timeline-vertical-right-event {
+        float: left;
+        margin-left: 80px;
+        text-align: left;
+    }
+
+    /*=====  End of WORK SECTION  ======*/
+
+    /*
+/*=============================================
+=            EDUCATION SECTION            =
+=============================================*/
+
+    .education-event {
+        width: 100%;
+    }
+
+    .education-event-detail {
+        text-align: left;
+        font-size: 90%;
+        border-top: none;
+        border-bottom: 5px solid var(--color-primary-4);
+    }
+
+    /*=====  End of EDUCATION SECTION  ======*/
+}
+
+@media only screen and (max-width: 425px) {}

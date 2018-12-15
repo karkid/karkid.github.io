@@ -4,11 +4,11 @@
 =============================================*/
 :root {
     /* As hex codes */
-    --color-primary-0: #209DEE;
-    --color-primary-1: #75C1F2;
-    --color-primary-2: #49AEF0;
-    --color-primary-3: #0890E9;
-    --color-primary-4: #0468AA;
+    --color-primary-0: #209dee;
+    --color-primary-1: #75c1f2;
+    --color-primary-2: #49aef0;
+    --color-primary-3: #0890e9;
+    --color-primary-4: #0468aa;
 
     --color-primary-black-0: #0000;
     --color-primary-black-1: #555;
@@ -40,7 +40,7 @@ html,
 body {
     background-color: #fff;
     color: var(--color-primary-black-1);
-    font-family: 'Lato', 'Arial', sans-serif;
+    font-family: "Lato", "Arial", sans-serif;
     font-weight: 300;
     font-size: 10px;
     text-rendering: optimizeLegibility;
@@ -48,7 +48,7 @@ body {
 }
 
 .clearfix {
-    zoom: 1
+    zoom: 1;
 }
 
 .clearfix:after {
@@ -204,6 +204,7 @@ section {
     margin: 0 auto;
     margin-top: 30px;
 }
+
 /*
 /*----------  GEOMETRY  ----------*/
 .triangle {
@@ -220,7 +221,6 @@ section {
     border-bottom: 20px solid transparent;
     border-top: 20px solid transparent;
 }
-
 
 .triangle-left * {
     margin-left: 10px;
@@ -266,6 +266,7 @@ section {
     border-radius: 50%;
     border: 5px solid var(--color-primary-4);
 }
+
 /*
 /*----------  TIMELINE  ----------*/
 .timeline-vertical {
@@ -356,8 +357,15 @@ blockquote h2 {
 =            HEADER SECTION            =
 =============================================*/
 header {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(var(--linear-gradent-shade)), to(var(--linear-gradent-shade))), url(../img/header-bg.jpg);
-    background-image: linear-gradient(var(--linear-gradent-shade), var(--linear-gradent-shade)), url(../img/header-bg.jpg);
+    background-image: -webkit-gradient(linear,
+        left top,
+        left bottom,
+        from(var(--linear-gradent-shade)),
+        to(var(--linear-gradent-shade))),
+        url(../img/header-bg.jpg);
+    background-image: linear-gradient(var(--linear-gradent-shade),
+        var(--linear-gradent-shade)),
+        url(../img/header-bg.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -367,26 +375,21 @@ header {
 .tag-ln {
     margin-top: 15%;
     box-sizing: border-box;
-    text-align: center;
     color: var(--color-primary-0);
+    text-align: center;
+}
+
+.signature {
+    font-family: "Halimun", "Arial", sans-serif;
+    font-weight: 100;
+    font-size: 200%;
+    color: var(--color-primary-0);
+    transform: rotate(-5deg);
+    margin-top: 28px;
 }
 
 /*
 /*----------  NAVIGATION  ----------*/
-
-.signature {
-    left: 0;
-    height: 100px;
-    width: auto;
-    float: left;
-    margin-top: 20px;
-    padding-top: 20px;
-    font-family: 'Halimun', 'Arial', sans-serif;
-    font-weight: 300;
-    font-size: 300%;
-    color: var(--color-primary-0);
-    transform: rotate(-5deg);
-}
 
 .main-nav {
     float: right;
@@ -419,7 +422,6 @@ header {
 /*
 /*----------  STICKY NAVIGATION  ----------*/
 
-
 .sticky {
     position: fixed;
     top: 0;
@@ -439,14 +441,6 @@ header {
     color: var(--color-primary-black-1);
 }
 
-.sticky .signature {
-    font-size: 200%;
-    height: 50px;
-    width: auto;
-    margin: 5px 0;
-    padding-top: 20px;
-}
-
 /*=====  End of HEADER SECTION  ======*/
 
 /*
@@ -463,13 +457,6 @@ header {
     text-align: justify;
 }
 
-.about-box:first-child {
-    margin-top: 0;
-}
-
-.about-screen {
-    float: right;
-}
 
 /*=====  End of ABOUT SECTION  ======*/
 /*
@@ -517,27 +504,15 @@ header {
 =            EDUCATION SECTION            =
 =============================================*/
 
-.education-event {
-    border-top: 2px dashed var(--color-primary-4);
-}
-/* .education-event:after {
-    position: absolute;
-    display: inline-block;
-    width: 0;
-    height:0;
-    margin-top: -55px;
-    border-radius: 50%;
-    border: 10px solid var(--color-primary-4);
-    content: "";
-    text-align: center;
-}  */
 .education-event-line {
     margin-top: 10px;
     text-align: center;
 }
+
 .education-event-line i {
     font-size: 300%;
 }
+
 .education-event-line i span {
     display: inline-block;
     font-size: 80%;
@@ -548,29 +523,12 @@ header {
 
 .education-event-detail {
     text-align: left;
+    font-size: 90%;
+    border-top: 5px solid var(--color-primary-4);
 }
 
+.education-event-detail strong {
+    color: var(--color-primary-0);
+}
 
-table {
-    width:100%;
-  }
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-  th, td {
-    padding: 15px;
-    text-align: left;
-  }
-  table#t01 tr:nth-child(even) {
-    background-color: #eee;
-  }
-  table#t01 tr:nth-child(odd) {
-   background-color: #fff;
-  }
-  table#t01 th {
-    background-color: black;
-    color: white;
-  }
 /*=====  End of EDUCATION SECTION  ======*/
-
