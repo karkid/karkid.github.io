@@ -27,28 +27,48 @@
         margin-left: 0;
     }
 
+    .triangle-left {
+        float: left;
+        margin-left: 30px;
+
+    }
+
+    .triangle-left * {
+        margin-right: 30px;
+        float: right;
+    }
+
     .triangle-right {
         float: left;
-        margin-left: 0;
+        margin-left: 30px;
         margin-right: 0;
-        border-left: 20px solid var(--color-primary-4);
         border-right: 0;
+        border-left: 20px solid var(--color-primary-4);
     }
 
     .triangle-right * {
-        margin-left: 10px;
-        float: left;
+        margin-right: 30px;
+        float: right;
     }
 
     .line-v {
         width: 0;
         border: 5px solid var(--color-primary-4);
-        margin-left: 0;
+        margin-left: 30px;
+    }
+
+    .line-h150 {
+        height: 100px;
+    }
+
+    .timeline-vertical-left-event {
+        margin-left: 20px;
     }
 
     .timeline-vertical-right-event {
         float: left;
-        margin-left: 80px;
+        margin-left: 20px;
+        margin-right: 0;
         text-align: left;
     }
 
