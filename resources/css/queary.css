@@ -1,96 +1,97 @@
-@media only screen and (max-width: 2560px) {}
+@media only screen and (max-width: 2560px) {
+}
 
 @media only screen and (max-width: 1024px) {
-    .about-box {
-        width: 100%
-    }
+  .about-box {
+    width: 100%;
+  }
 
-    .about-screen {
-        float: none;
-        display: block;
-        margin: auto;
-    }
+  .about-screen {
+    float: none;
+    display: block;
+    margin: auto;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-
-    .main-nav {
-        display: none;
-    }
-
-    /*
+  .main-nav {
+    display: none;
+  }
+  .sticky {
+    display: none;
+  }
+  /*
     /*=============================================
     =            WORK SECTION            =
     =============================================*/
 
-    .triangle-left {
-        margin-left: 0;
-    }
+  .triangle-left {
+    margin-left: 0;
+  }
 
-    .triangle-left {
-        float: left;
-        margin-left: 30px;
+  .triangle-left {
+    float: left;
+    margin-left: 30px;
+  }
 
-    }
+  .triangle-left * {
+    margin-right: 30px;
+    float: right;
+  }
 
-    .triangle-left * {
-        margin-right: 30px;
-        float: right;
-    }
+  .triangle-right {
+    float: left;
+    margin-left: 30px;
+    margin-right: 0;
+    border-right: 0;
+    border-left: 20px solid var(--color-primary-4);
+  }
 
-    .triangle-right {
-        float: left;
-        margin-left: 30px;
-        margin-right: 0;
-        border-right: 0;
-        border-left: 20px solid var(--color-primary-4);
-    }
+  .triangle-right * {
+    margin-right: 30px;
+    float: right;
+  }
 
-    .triangle-right * {
-        margin-right: 30px;
-        float: right;
-    }
+  .line-v {
+    width: 0;
+    border: 5px solid var(--color-primary-4);
+    margin-left: 30px;
+  }
 
-    .line-v {
-        width: 0;
-        border: 5px solid var(--color-primary-4);
-        margin-left: 30px;
-    }
+  .line-h150 {
+    height: 100px;
+  }
 
-    .line-h150 {
-        height: 100px;
-    }
+  .timeline-vertical-left-event {
+    margin-left: 20px;
+  }
 
-    .timeline-vertical-left-event {
-        margin-left: 20px;
-    }
+  .timeline-vertical-right-event {
+    float: left;
+    margin-left: 20px;
+    margin-right: 0;
+    text-align: left;
+  }
 
-    .timeline-vertical-right-event {
-        float: left;
-        margin-left: 20px;
-        margin-right: 0;
-        text-align: left;
-    }
+  /*=====  End of WORK SECTION  ======*/
 
-    /*=====  End of WORK SECTION  ======*/
-
-    /*
+  /*
 /*=============================================
 =            EDUCATION SECTION            =
 =============================================*/
 
-    .education-event {
-        width: 100%;
-    }
+  .education-event {
+    width: 100%;
+  }
 
-    .education-event-detail {
-        text-align: left;
-        font-size: 90%;
-        border-top: none;
-        border-bottom: 5px solid var(--color-primary-4);
-    }
-
-    /*=====  End of EDUCATION SECTION  ======*/
+  .education-event-detail {
+    text-align: left;
+    font-size: 90%;
+    border-top: none;
+    border-bottom: 5px solid var(--color-primary-4);
+  }
+  /*=====  End of EDUCATION SECTION  ======*/
 }
 
-@media only screen and (max-width: 425px) {}
+@media only screen and (max-width: 425px) {
+}
