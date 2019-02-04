@@ -306,7 +306,7 @@ blockquote {
   line-height: 145%;
   position: relative;
   margin-top: 40px;
-  quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: "\201C""\201D""\2018""\2019";
 }
 
 blockquote:before {
@@ -580,7 +580,7 @@ header {
 }
 
 .ux {
-  width: 40%;
+  width: 60%;
 }
 
 .mysql {
@@ -622,7 +622,7 @@ header {
 }
 
 .linkedin:hover {
-  background: #0077B5;
+  background: #0077b5;
 }
 
 .github:hover {
