@@ -45,6 +45,7 @@ body {
   font-size: 10px;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .clearfix {
@@ -357,18 +358,14 @@ blockquote h2 {
 =            HEADER SECTION            =
 =============================================*/
 header {
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(var(--linear-gradent-shade)),
-      to(var(--linear-gradent-shade))
-    ),
+  background-image: -webkit-gradient(linear,
+    left top,
+    left bottom,
+    from(var(--linear-gradent-shade)),
+    to(var(--linear-gradent-shade))),
     url(../img/header-bg.jpg);
-  background-image: linear-gradient(
-      var(--linear-gradent-shade),
-      var(--linear-gradent-shade)
-    ),
+  background-image: linear-gradient(var(--linear-gradent-shade),
+    var(--linear-gradent-shade)),
     url(../img/header-bg.jpg);
   background-size: cover;
   background-position: center;
@@ -519,6 +516,7 @@ header {
 .education-event-line p {
   margin-bottom: 0;
 }
+
 .education-event-line i span {
   display: inline-block;
   font-size: 80%;
@@ -549,6 +547,7 @@ header {
   font-size: 180%;
   font-weight: 400;
 }
+
 .skill-bar-container {
   width: 100%;
   background-color: var(--color-primary-white-1);
@@ -565,12 +564,15 @@ header {
   width: 80%;
   content: "90%";
 }
+
 .cpp {
   width: 80%;
 }
+
 .js {
   width: 65%;
 }
+
 .htmlcss {
   width: 60%;
 }
