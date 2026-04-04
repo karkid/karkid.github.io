@@ -3,7 +3,7 @@ window.SITE_TEMPLATE_VARS = {
     Current_Role: "Arden Software",
     Affiliation: "University of Bristol",
     About_Intro: "I am currently a Staff Software Developer working on CAD systems, with an active transition toward Robotics and AI research through the MS Robotics programme at the University of Bristol.",
-    About_Background: "My background is in production engineering software, with a focus on computational geometry, spatial data structures, and high-performance algorithm design. I am now extending this foundation into research-oriented work in reinforcement learning, graph machine learning, and decision systems for robotics.",
+    About_Background: "My background is in software engineering, with a focus on CAD systems, computational geometry, spatial data structures, and high-performance algorithm design. I am now extending this foundation into research-oriented work in reinforcement learning, graph machine learning, and decision systems for robotics.",
     About_Collaboration: "If you are interested in discussing collaboration opportunities or shared technical interests, please connect with me on LinkedIn.",
     Current_Position_Detail: "Staff Software Developer at Arden Software",
     Academic_Direction: "MS Robotics (University of Bristol), RL, graph ML, perception",
@@ -23,6 +23,7 @@ window.SITE_TEMPLATE_VARS = {
             description: "A knowledge graph generation and claim validation framework for epistemic fact checking. This project processes structured data from AI2-THOR simulations and AVERITEC datasets to build RDF knowledge graphs and generate verifiable claims with epistemic labels.",
             link: "https://github.com/karkid/epistemic-factkg",
             Repo: "Private",
+            owner: "Dheeraj Karki",
             status: "In Progress",
             timeline: "February 2026 - Ongoing",
             technology: "Python",
@@ -37,6 +38,7 @@ window.SITE_TEMPLATE_VARS = {
             link: "https://github.com/karkid/ReML",
             status: "In Progress",
             Repo: "Public",
+            owner: "Dheeraj Karki",
             timeline: "April 2024 - Ongoing",
             technology: "Python",
             tags: ["Exploration", "Git"],
@@ -50,6 +52,7 @@ window.SITE_TEMPLATE_VARS = {
             link: "https://github.com/karkid/PDDL",
             status: "Completed",
             Repo: "Public",
+            owner: "Dheeraj Karki",
             timeline: "August 2025 - August 2025",
             technology: "PDDL",
             domain: "Automated Planning, AI Planning",
@@ -63,6 +66,7 @@ window.SITE_TEMPLATE_VARS = {
             link: "https://github.com/karkid/CADInColud",
             status: "Completed",
             Repo: "Public",
+            owner: "Dheeraj Karki",
             timeline: "July 2018 - September 2026",
             technology: "C++",
             domain: "CAD, Cloud Computing",
@@ -75,6 +79,7 @@ window.SITE_TEMPLATE_VARS = {
             description: "It is the game build on Entity Component System paradigm.",
             link: "https://github.com/karkid/Shape_War",
             status: "Completed",
+            owner: "Dheeraj Karki",
             timeline: "March 2024 - March 2024",
             technology: "C++",
             domain: "Game Development, C++ Programming",
@@ -87,6 +92,7 @@ window.SITE_TEMPLATE_VARS = {
             description: "Exploratory data analysis of Air BNB listings in London, UK, using Python and Jupyter Notebook.",
             link: "https://github.com/karkid/exploratory-analysis/",
             status: "Completed",
+            owner: "Dheeraj Karki",
             timeline: "June 2023 - July 2023",
             technology: "Python",
             domain: "Data Analysis, Machine Learning",
@@ -100,6 +106,7 @@ window.SITE_TEMPLATE_VARS = {
             link: "https://frido.app/",
             status: "Active",
             Repo: "Private",
+            owner: "Dheeraj Karki",
             timeline: "August 2019 - February 2026",
             technology: "React, Firebase",
             domain: "Web Development, Productivity Tools",
@@ -115,6 +122,7 @@ window.SITE_TEMPLATE_VARS = {
             timeline: "July 2019 - September 2019",
             status: "Discontinued",
             Repo: "Public",
+            owner: "Dheeraj Karki",
             technology: "C++",
             domain: "Graphics Programming, Rendering Engines",
             tags: ["Exploration", "Git"],
@@ -129,28 +137,238 @@ window.SITE_TEMPLATE_VARS = {
             timeline: "December 2018 - December 2018",
             status: "Completed",
             Repo: "Public",
+            owner: "Dheeraj Karki",
             tags: ["Exploration", "Git"],
             pinned: false,
             domain: "Game Development, C++ Programming",
             purpose: "I had created similar project in my first year of bachelor degree in C. I got chance to recreate it for an interview process in C++. It was a fun project to work and I remember it as Hello World of C++ for me."
         },
+        {
+            title: "Lens 2D Render Engine",
+            description: "Improving the rendering pipeline and architecture of a 2D engine to enhance performance and visual quality.",
+            link: "",
+            presentation_link: "../resources/docs/talks/Lens%202D%20Render%20Engine.pdf",
+            Repo: "Private",
+            status: "Completed",
+            timeline: "November 2019 - July 2020",
+            technology: "JavaScript, WebGL",
+            domain: "Graphics, Rendering, JavaScript",
+            tags: ["Research", "Office"],
+            pinned: true,
+            owner: "Arden Software",
+            purpose: "Enhancing the 2D rendering engine to improve performance and visual quality for internal projects."
+        },
+        {
+            title: "Cimex Importer",
+            description: "Designing and implementing an importer for the Cimex CAD format, including handling geometry, metadata, and integration with existing CAD systems.",
+            link: "",
+            presentation_link: "../resources/docs/talks/Cimex_Importer.pdf",
+            Repo: "Private",
+            status: "Completed",
+            timeline: "September 2021 - October 2021",
+            technology: "C++",
+            domain: "CAD, Interoperability, Data Exchange",
+            tags: ["Research", "Office"],
+            pinned: true,
+            owner: "Arden Software",
+            purpose: "Reverse engineering the Cimex CAD format to build an importer that can handle geometry, metadata, and integrate with existing CAD systems. This project is important for improving interoperability and data exchange in CAD workflows."
+        },
+        {
+            title: "Viewport React Component",
+            summary: "Presentation on building and structuring viewport-driven UI components.",
+            link: "",
+            presentation_link: "../resources/docs/talks/ViewportReactComponent.pdf",
+            Repo: "Private",
+            status: "Completed",
+            timeline: "November 2025 - November 2025",
+            technology: "React, JavaScript, C++",
+            domain: "Frontend Development, UI Components",
+            tags: ["Research", "Office"],
+            pinned: true,
+            owner: "Arden Software",
+            purpose: "Designing a viewport react component which will be same for native and web. The goal is to have a single component that can be used across different platforms, improving code reuse and consistency in the user interface. This project is important for streamlining development and providing a seamless experience for users across native and web applications."
+        }
     ],
 
-    // Blogs
-    blogs_intro: "Here are some of my recent blog posts, which reflect my interests in machine learning, AI research, and software development. I enjoy sharing my insights and experiences through writing, and I hope these posts provide value to others in the field. If you have any questions or want to discuss any of these topics further, please feel free to reach out.",
+    // Talks & Blogs
+    blogs_intro: "Here are some of my recent talks, session presentations, and blog posts, which reflect my interests in machine learning, AI research, and software development. I enjoy sharing my insights and experiences through writing and speaking, and I hope these posts provide value to others in the field. If you have any questions or want to discuss any of these topics further, please feel free to reach out.",
     blogs: [
         {
-            title: "Understanding Graph Neural Networks",
-            summary: "A simple explanation of how GNNs work and why they matter for relational data.",
-            link: "/pages/blog/gnn.html",
-            date: "2026-01-15",
-            tags: ["Machine Learning", "GNN", "AI"],
-            timeToRead: "6 min",
-            featured: true,
+            title: "SOLID",
+            summary: "Session slides on SOLID principles for maintainable object-oriented design.",
+            link: "../resources/docs/talks/SOLID.pdf",
+            date: "May 6, 2019",
+            tags: ["Design", "OOP", "Architecture"],
+            timeToRead: "75 min read",
+            featured: false,
             author: "Dheeraj Karki",
-            cover: "https://example.com/images/gnn-blog-cover.jpg",
-            status: "Published"
-        }
+            status: "Presented",
+            type: "talk",
+            event: "Session Talk",
+            file_type: "pptx",
+            mode: "In-Person",
+            location: "Gräbert GmbH"
+        },
+        {
+            title: "Flash Cards",
+            summary: "Presentation deck used for quick concept reviews and knowledge sharing sessions.",
+            link: "../resources/docs/talks/Flash-Cards.pdf",
+            date: "March 31, 2024",
+            tags: ["Learning", "Workshop"],
+            timeToRead: "9 min read",
+            featured: false,
+            author: "Dheeraj Karki",
+            status: "Presented",
+            type: "talk",
+            event: "Meeting Talk",
+            file_type: "pptx",
+            mode: "Online",
+            location: "iSpeak"
+        },
+        {
+            title: "Statistics",
+            summary: "Talk slides covering practical statistics concepts for engineering and analysis.",
+            link: "../resources/docs/talks/Statistics.pdf",
+            date: "April 4, 2024",
+            tags: ["Statistics", "Data"],
+            timeToRead: "42 min read",
+            featured: false,
+            author: "Dheeraj Karki",
+            status: "Presented",
+            type: "talk",
+            event: "Session Talk",
+            file_type: "pptx",
+            mode: "In-Person",
+            location: "Arden Software"
+        },
+        {
+            title: "Cimex Importer",
+            summary: "Technical session deck discussing importer design and integration details.",
+            link: "../resources/docs/talks/Cimex_Importer.pdf",
+            date: "March 17, 2024",
+            tags: ["CAD", "Import", "Engineering"],
+            timeToRead: "18 min read",
+            featured: false,
+            author: "Dheeraj Karki",
+            status: "Presented",
+            type: "talk",
+            event: "Session Talk",
+            file_type: "pptx",
+            mode: "Online",
+            location: "Arden Software"
+        },
+        {
+            title: "Viewport React Component",
+            summary: "Presentation on building and structuring viewport-driven UI components.",
+            link: "../resources/docs/talks/ViewportReactComponent.pdf",
+            date: "September 24, 2025",
+            tags: ["React", "Frontend", "UI"],
+            timeToRead: "9 min read",
+            featured: false,
+            author: "Dheeraj Karki",
+            status: "Presented",
+            type: "talk",
+            event: "Session Talk",
+            file_type: "pptx",
+            mode: "Online",
+            location: "Arden Software"
+        },
+        {
+            title: "Lens 2D Render Engine",
+            summary: "Talk material explaining architecture and rendering flow for a 2D engine.",
+            link: "../resources/docs/talks/Lens%202D%20Render%20Engine.pdf",
+            date: "April 25, 2024",
+            tags: ["Graphics", "Rendering", "C++"],
+            timeToRead: "21 min read",
+            featured: false,
+            author: "Dheeraj Karki",
+            status: "Presented",
+            type: "talk",
+            event: "Session Talk",
+            file_type: "pptx",
+            mode: "Online",
+            location: "Arden Software"
+        },
+        {
+            title: "Design Pattern: Decorative And Composite",
+            summary: "Slides focused on Decorator and Composite patterns with practical examples.",
+            link: "../resources/docs/talks/Design%20Pattern_%20DecorativeAndComposite.pdf",
+            date: "May 7, 2019",
+            tags: ["Design Patterns", "Software Design"],
+            timeToRead: "12 min read",
+            featured: false,
+            author: "Dheeraj Karki",
+            status: "Presented",
+            type: "talk",
+            event: "Session Talk",
+            file_type: "pptx",
+            mode: "In-Person",
+            location: "Gräbert GmbH"
+        },
+        {
+            title: "Basics of Computer Graphics and Its Importance",
+            summary: "Introductory presentation covering graphics fundamentals and real-world relevance.",
+            link: "../resources/docs/talks/Basics%20of%20Computer%20Grapics%20and%20Its%20Importance.pdf",
+            date: "April 4, 2019",
+            tags: ["Computer Graphics", "Fundamentals"],
+            timeToRead: "31 min read",
+            featured: false,
+            author: "Dheeraj Karki",
+            status: "Presented",
+            type: "talk",
+            event: "Session Talk",
+            file_type: "pptx",
+            mode: "In-Person",
+            location: "Gräbert GmbH"
+        },
+        {
+            title: "Talk about Dimension Unit",
+            summary: "Session notes and slides on dimension/unit handling in design workflows.",
+            link: "../resources/docs/talks/ON-TalkaboutDimensionUnit-070219-0452.pdf",
+            date: "May 6, 2019",
+            tags: ["CAD", "Dimensions", "Units"],
+            timeToRead: "4 min read",
+            featured: false,
+            author: "Dheeraj Karki",
+            status: "Presented",
+            type: "talk",
+            event: "Session Talk",
+            file_type: "pdf",
+            mode: "In-Person",
+            location: "Gräbert GmbH"
+        },
+        {
+            title: "Philosophy behind OdRxObject",
+            summary: "Technical presentation discussing architecture decisions around OdRxObject.",
+            link: "../resources/docs/talks/Philosophy%20behind%20OdRxObject.pptx.pdf",
+            date: "December 27, 2018",
+            tags: ["CAD", "Architecture", "C++"],
+            timeToRead: "36 min read",
+            featured: false,
+            author: "Dheeraj Karki",
+            status: "Presented",
+            type: "talk",
+            event: "Session Talk",
+            file_type: "pptx",
+            mode: "In-Person",
+            location: "Gräbert GmbH"
+        },
+        {
+            title: "Let's Discover Coding in Life",
+            summary: "Community-style talk encouraging coding through everyday problem solving.",
+            link: "../resources/docs/talks/Let%E2%80%99s%20discover%20coding%20in%20life.pdf",
+            date: "December 10, 2023",
+            tags: ["Coding", "Community", "Learning"],
+            timeToRead: "15 min read",
+            featured: false,
+            author: "Dheeraj Karki",
+            status: "Presented",
+            type: "talk",
+            event: "Session Talk",
+            file_type: "pptx",
+            mode: "Online",
+            location: "Arden Software"
+        },
     ],
 
     // Journey
@@ -210,41 +428,111 @@ window.SITE_TEMPLATE_VARS = {
     news_intro: "Here are some of the recent news and updates related to my work and research. I am always excited to share my progress and insights, so feel free to reach out if you want to discuss any of these updates or related topics.",
     news: [
         {
-            date: "2026-02-10",
-            headline: "Started working on Epistemic FactKG research draft focusing on explainable AI."
+            date: "2026-04-04",
+            headline: "Launched my new portfolio page to better share my journey, projects, talks, and learning with everyone 🎉"
         },
         {
-            date: "2025-11-20",
-            headline: "Completed initial experiments on knowledge graph-based claim validation."
+            date: "2026-02-10",
+            headline: "Started the Epistemic FactKG research initiative to explore explainable fact verification using epistemic reasoning and knowledge-graph-based evidence modeling.",
+            link: "https://github.com/karkid/epistemic-factkg"
+        },
+        {
+            date: "2025-11-01",
+            headline: "Completed the Viewport React Component initiative at Arden Software to improve cross-platform UI consistency, reuse, and maintainability across product workflows.",
+            link: "../resources/docs/talks/ViewportReactComponent.pdf"
+        },
+        {
+            date: "2025-09-24",
+            headline: "Presented a technical session on the Viewport React Component, covering its architecture, implementation decisions, and integration approach for product teams.",
+            link: "../resources/docs/talks/ViewportReactComponent.pdf"
+        },
+        {
+            date: "2025-08-15",
+            headline: "Completed the PDDL Planner project to support automated planning experiments, domain modeling, and evaluation of planning workflows.",
+            link: "https://github.com/karkid/PDDL"
+        },
+        {
+            date: "2025-01-10",
+            headline: "Defined the MS Robotics academic direction at the University of Bristol, with a focus on reinforcement learning and graph machine learning for robotics research."
+        },
+        {
+            date: "2024-04-25",
+            headline: "Delivered a technical presentation on the Lens 2D Render Engine, explaining its design choices, rendering pipeline, and practical workflow usage.",
+            link: "../resources/docs/talks/Lens%202D%20Render%20Engine.pdf"
+        },
+        {
+            date: "2024-04-04",
+            headline: "Delivered a Statistics session focused on practical engineering analysis, helping connect statistical concepts with real-world technical problem solving.",
+            link: "../resources/docs/talks/Statistics.pdf"
+        },
+        {
+            date: "2024-03-31",
+            headline: "Hosted an online Flash Cards knowledge-sharing session to discuss learning techniques, structured revision, and practical knowledge retention strategies.",
+            link: "../resources/docs/talks/Flash-Cards.pdf"
+        },
+        {
+            date: "2024-03-17",
+            headline: "Presented the Cimex Importer design and CAD interoperability approach, highlighting data flow, integration challenges, and implementation strategy.",
+            link: "../resources/docs/talks/Cimex_Importer.pdf"
+        },
+        {
+            date: "2023-12-10",
+            headline: "Delivered the 'Let's Discover Coding in Life' community session to make coding concepts more relatable, accessible, and relevant to everyday life.",
+            link: "../resources/docs/talks/Let%E2%80%99s%20discover%20coding%20in%20life.pdf"
+        },
+        {
+            date: "2019-05-07",
+            headline: "Presented a Design Pattern session focused on Decorator and Composite patterns, with emphasis on architectural thinking and practical software design use cases.",
+            link: "../resources/docs/talks/Design%20Pattern_%20DecorativeAndComposite.pdf"
+        },
+        {
+            date: "2019-05-06",
+            headline: "Delivered a SOLID principles session focused on improving software design quality, maintainability, and engineering decision making.",
+            link: "../resources/docs/talks/SOLID.pdf"
+        },
+        {
+            date: "2019-05-06",
+            headline: "Delivered a Dimension Unit handling session to improve CAD consistency, measurement correctness, and workflow reliability.",
+            link: "../resources/docs/talks/ON-TalkaboutDimensionUnit-070219-0452.pdf"
+        },
+        {
+            date: "2019-04-04",
+            headline: "Presented a session on the basics of computer graphics, explaining core concepts and their practical importance in real engineering and software applications.",
+            link: "../resources/docs/talks/Basics%20of%20Computer%20Grapics%20and%20Its%20Importance.pdf"
+        },
+        {
+            date: "2018-12-27",
+            headline: "Presented the 'Philosophy behind OdRxObject' session to explain the technical architecture, underlying design ideas, and practical significance of the object model.",
+            link: "../resources/docs/talks/Philosophy%20behind%20OdRxObject.pptx.pdf"
         }
     ],
     // Publications
     publications_intro: "Here are some of my recent publications, which reflect my research interests in explainable AI, knowledge graphs, and fact checking. I am always open to discussing research ideas and potential collaborations, so feel free to reach out if you want to discuss any of these publications or related topics.",
     publications: [
-        {
-            key: "kumar2026epistemic",
-            author: "Kumar, Karthik and Smith, John",
-            title: "Epistemic Labeling for Explainable Fact Verification",
-            booktitle: "Proceedings of the Workshop on Explainable AI (XAI)",
-            year: "2026",
-            publisher: "ACM",
-            pages: "12--18",
-            doi: "10.1145/xxxxxxx.xxxxxxx",
-            link: "https://example.com/publication-epistemic",
-            type: "inproceedings"
-        },
-        {
-            key: "kumar2025graph",
-            author: "Kumar, Karthik",
-            title: "Graph-Based Approaches for Claim Validation",
-            journal: "International Journal of Machine Learning Applications",
-            year: "2025",
-            volume: "14",
-            number: "3",
-            pages: "201--215",
-            doi: "10.1016/j.ijmla.2025.01.002",
-            link: "https://example.com/publication-graph",
-            type: "article"
-        }
+        // {
+        //     key: "kumar2026epistemic",
+        //     author: "Kumar, Karthik and Smith, John",
+        //     title: "Epistemic Labeling for Explainable Fact Verification",
+        //     booktitle: "Proceedings of the Workshop on Explainable AI (XAI)",
+        //     year: "2026",
+        //     publisher: "ACM",
+        //     pages: "12--18",
+        //     doi: "10.1145/xxxxxxx.xxxxxxx",
+        //     link: "https://example.com/publication-epistemic",
+        //     type: "inproceedings"
+        // },
+        // {
+        //     key: "kumar2025graph",
+        //     author: "Kumar, Karthik",
+        //     title: "Graph-Based Approaches for Claim Validation",
+        //     journal: "International Journal of Machine Learning Applications",
+        //     year: "2025",
+        //     volume: "14",
+        //     number: "3",
+        //     pages: "201--215",
+        //     doi: "10.1016/j.ijmla.2025.01.002",
+        //     link: "https://example.com/publication-graph",
+        //     type: "article"
+        // }
     ]
 };
