@@ -1,97 +1,52 @@
-@media only screen and (max-width: 2560px) {
-}
-
-@media only screen and (max-width: 1024px) {
-  .about-box {
-    width: 100%;
+@media only screen and (max-width: 980px) {
+  .main-nav {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
-  .about-screen {
-    float: none;
-    display: block;
-    margin: auto;
+  .grid-two {
+    grid-template-columns: 1fr;
   }
 }
 
 @media only screen and (max-width: 768px) {
+  .nav-wrap {
+    display: block;
+    padding: 1rem 0;
+  }
+
+  .brand {
+    display: inline-block;
+    margin-bottom: 0.8rem;
+  }
+
   .main-nav {
-    display: none;
-  }
-  .sticky {
-    display: none;
-  }
-  /*
-    /*=============================================
-    =            WORK SECTION            =
-    =============================================*/
-
-  .triangle-left {
-    margin-left: 0;
+    justify-content: flex-start;
   }
 
-  .triangle-left {
-    float: left;
-    margin-left: 30px;
+  .hero {
+    padding: 6rem 0 4rem;
   }
 
-  .triangle-left * {
-    margin-right: 30px;
-    float: right;
+  .section-block {
+    padding: 4.5rem 0;
   }
-
-  .triangle-right {
-    float: left;
-    margin-left: 30px;
-    margin-right: 0;
-    border-right: 0;
-    border-left: 20px solid var(--color-primary-4);
-  }
-
-  .triangle-right * {
-    margin-right: 30px;
-    float: right;
-  }
-
-  .line-v {
-    width: 0;
-    border: 5px solid var(--color-primary-4);
-    margin-left: 30px;
-  }
-
-  .line-h150 {
-    height: 100px;
-  }
-
-  .timeline-vertical-left-event {
-    margin-left: 20px;
-  }
-
-  .timeline-vertical-right-event {
-    float: left;
-    margin-left: 20px;
-    margin-right: 0;
-    text-align: left;
-  }
-
-  /*=====  End of WORK SECTION  ======*/
-
-  /*
-/*=============================================
-=            EDUCATION SECTION            =
-=============================================*/
-
-  .education-event {
-    width: 100%;
-  }
-
-  .education-event-detail {
-    text-align: left;
-    font-size: 90%;
-    border-top: none;
-    border-bottom: 5px solid var(--color-primary-4);
-  }
-  /*=====  End of EDUCATION SECTION  ======*/
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 480px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  p,
+  li,
+  a {
+    font-size: 1.55rem;
+  }
+
+  .hero-links a {
+    width: 100%;
+    text-align: center;
+  }
 }

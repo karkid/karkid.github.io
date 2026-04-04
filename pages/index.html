@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | {Name}</title>
+    <link rel="icon" type="image/png" href="../resources/img/karkid.png" />
+    <link rel="stylesheet" type="text/css" href="../venders/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../venders/css/ionicons.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/css/minimal.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html">{Name}</a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html" class="active">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="journey.html">Journey</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                </ul>
+                <button class="theme-toggle" type="button" aria-pressed="false">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-block">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <h1>{Name}</h1>
+                    <p><strong>{Current_Role}</strong></p>
+                    <p>{About_Intro}</p>
+                    <p>{About_Background}</p>
+                    <p>{About_Collaboration}</p>
+                    <ul class="plain-list tight-list hero-list">
+                        <li><strong>Current role:</strong> {Current_Position_Detail}</li>
+                        <li><strong>Academic direction:</strong> {Academic_Direction}</li>
+                        <li><strong>Near-term goal:</strong> {Near_Term_Goal}</li>
+                    </ul>
+                    <div class="hero-links">
+                        <a href="{CV_URL}" target="_blank">CV (PDF)</a>
+                        <a href="{GitHub_URL}" target="_blank">GitHub</a>
+                        <a href="{LinkedIn_URL}" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="hero-photo-wrap">
+                    <img src="../resources/img/karkid.png" alt="Dheeraj Karki" class="hero-photo" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="quick-contact" aria-label="Quick contact links">
+        <a href="{LinkedIn_URL}" target="_blank" title="LinkedIn"><i class="ion-social-linkedin"></i></a>
+        <a href="{GitHub_URL}" target="_blank" title="GitHub"><i class="ion-social-github"></i></a>
+        <a href="{CV_URL}" target="_blank" title="CV"><i class="ion-ios-cloud-download"></i></a>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-row">
+            <p>© {Year} {Name}</p>
+            <p class="footer-links">
+                <a href="{LinkedIn_URL}" target="_blank">LinkedIn</a>
+                · <a href="{GitHub_URL}" target="_blank">GitHub</a>
+                · <a href="{CV_URL}" target="_blank">CV</a>
+            </p>
+        </div>
+    </footer>
+    <script src="../resources/js/site-config.js"></script>
+    <script src="../resources/js/template-bind.js"></script>
+    <script src="../resources/js/theme-toggle.js"></script>
+</body>
+
+</html>
