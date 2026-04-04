@@ -166,6 +166,14 @@ body[data-theme="dark"] .hero {
     text-align: right;
 }
 
+.about-hero .hero-photo-wrap {
+    padding-top: 13.5rem;
+}
+
+.about-hero {
+    align-items: flex-start;
+}
+
 .hero-photo {
     width: min(280px, 100%);
     border-radius: 10px;
@@ -1013,6 +1021,10 @@ body[data-theme="dark"] .pdf-viewer-error {
 
     .hero-photo-wrap {
         text-align: left;
+    }
+
+    .about-hero .hero-photo-wrap {
+        padding-top: 0;
     }
 
     .footer-row {

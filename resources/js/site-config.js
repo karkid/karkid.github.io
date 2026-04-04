@@ -79,6 +79,7 @@ window.SITE_TEMPLATE_VARS = {
             description: "It is the game build on Entity Component System paradigm.",
             link: "https://github.com/karkid/Shape_War",
             status: "Completed",
+            Repo: "Public",
             owner: "Dheeraj Karki",
             timeline: "March 2024 - March 2024",
             technology: "C++",
@@ -92,6 +93,7 @@ window.SITE_TEMPLATE_VARS = {
             description: "Exploratory data analysis of Air BNB listings in London, UK, using Python and Jupyter Notebook.",
             link: "https://github.com/karkid/exploratory-analysis/",
             status: "Completed",
+            Repo: "Public",
             owner: "Dheeraj Karki",
             timeline: "June 2023 - July 2023",
             technology: "Python",
@@ -385,7 +387,7 @@ window.SITE_TEMPLATE_VARS = {
         {
             year: "2016-2018",
             icon: "ion-ios-book",
-            location: "At University, India",
+            location: "At BITS Pilani University, India",
             event: "Pursued a Master's degree in Software Systems. ",
             outcome: "This education provided me with the technical knowledge and critical thinking abilities that have been essential in my career development.",
             reward: "Graduated with a CGPA of 8.6/10, earning accreditation for academic excellence."
@@ -401,7 +403,7 @@ window.SITE_TEMPLATE_VARS = {
         {
             year: "2008-2012",
             icon: "ion-ios-book-outline",
-            location: "At University Dehradun, Uttarakhand, India",
+            location: "At ICFAI University Dehradun, Uttarakhand, India",
             event: "Pursued a Bachelor's degree in Electronics and Communication Engineering.",
             outcome: "This education provided me with the technical knowledge and critical thinking abilities that have been essential in my career development.",
             reward: "Scored 9.42/10 CGPA in my Bachelor's degree, earning a silver medal 🥈 and graduating with honors."
@@ -433,76 +435,80 @@ window.SITE_TEMPLATE_VARS = {
         },
         {
             date: "2026-02-10",
-            headline: "Started the Epistemic FactKG research initiative to explore explainable fact verification using epistemic reasoning and knowledge-graph-based evidence modeling.",
+            headline: "Started the Epistemic FactKG research initiative to explore explainable fact verification using epistemic reasoning and knowledge-graph-based evidence modeling. 🔬",
             link: "https://github.com/karkid/epistemic-factkg"
         },
         {
             date: "2025-11-01",
-            headline: "Completed the Viewport React Component initiative at Arden Software to improve cross-platform UI consistency, reuse, and maintainability across product workflows.",
+            headline: "Completed the Viewport React Component initiative at Arden Software to improve cross-platform UI consistency, reuse, and maintainability across product workflows. ✅",
             link: "../resources/docs/talks/ViewportReactComponent.pdf"
         },
         {
             date: "2025-09-24",
-            headline: "Presented a technical session on the Viewport React Component, covering its architecture, implementation decisions, and integration approach for product teams.",
+            headline: "Presented a technical session on the Viewport React Component at Arden Software (Online), covering its architecture, implementation decisions, and integration approach for product teams. 🎤",
             link: "../resources/docs/talks/ViewportReactComponent.pdf"
         },
         {
+            date: "2025-08-01",
+            headline: "Completed IELTS in Aug 2025 with Listening 7.0, Reading 6.5, Writing 6.5, Speaking 6.5, Overall Band Score 6.5, and CEFR Level B2 🎉"
+        },
+        {
             date: "2025-08-15",
-            headline: "Completed the PDDL Planner project to support automated planning experiments, domain modeling, and evaluation of planning workflows.",
+            headline: "Completed the PDDL Planner project to support automated planning experiments, domain modeling, and evaluation of planning workflows. ✅",
             link: "https://github.com/karkid/PDDL"
         },
         {
             date: "2025-01-10",
-            headline: "Defined the MS Robotics academic direction at the University of Bristol, with a focus on reinforcement learning and graph machine learning for robotics research."
+            headline: "Defined the MS Robotics academic direction at the University of Bristol, with a focus on reinforcement learning and graph machine learning for robotics research. 🎓"
         },
         {
             date: "2024-04-25",
-            headline: "Delivered a technical presentation on the Lens 2D Render Engine, explaining its design choices, rendering pipeline, and practical workflow usage.",
+            headline: "Delivered a technical presentation on the Lens 2D Render Engine at Arden Software (Online), explaining its design choices, rendering pipeline, and practical workflow usage. 🖥️",
             link: "../resources/docs/talks/Lens%202D%20Render%20Engine.pdf"
         },
         {
             date: "2024-04-04",
-            headline: "Delivered a Statistics session focused on practical engineering analysis, helping connect statistical concepts with real-world technical problem solving.",
+            headline: "Delivered a Statistics session at Arden Software (In-Person), focused on practical engineering analysis and connecting statistical concepts with real-world technical problem solving. 📊",
             link: "../resources/docs/talks/Statistics.pdf"
         },
         {
             date: "2024-03-31",
-            headline: "Hosted an online Flash Cards knowledge-sharing session to discuss learning techniques, structured revision, and practical knowledge retention strategies.",
+            headline: "Hosted a Flash Cards knowledge-sharing session at iSpeak (Online) to discuss learning techniques, structured revision, and practical knowledge retention strategies. 💡",
             link: "../resources/docs/talks/Flash-Cards.pdf"
         },
         {
             date: "2024-03-17",
-            headline: "Presented the Cimex Importer design and CAD interoperability approach, highlighting data flow, integration challenges, and implementation strategy.",
+            headline: "Presented the Cimex Importer design and CAD interoperability approach at Arden Software (Online), highlighting data flow, integration challenges, and implementation strategy. ⚙️",
             link: "../resources/docs/talks/Cimex_Importer.pdf"
         },
         {
             date: "2023-12-10",
-            headline: "Delivered the 'Let's Discover Coding in Life' community session to make coding concepts more relatable, accessible, and relevant to everyday life.",
+            headline: "Delivered the 'Let's Discover Coding in Life' community session at Arden Software (Online) to make coding concepts more relatable, accessible, and relevant to everyday life. 🌟",
             link: "../resources/docs/talks/Let%E2%80%99s%20discover%20coding%20in%20life.pdf"
         },
         {
             date: "2019-05-07",
-            headline: "Presented a Design Pattern session focused on Decorator and Composite patterns, with emphasis on architectural thinking and practical software design use cases.",
+            headline: "Presented a Design Pattern session at Gräbert GmbH (In-Person), focused on Decorator and Composite patterns with emphasis on architectural thinking and practical software design use cases. 🧩",
             link: "../resources/docs/talks/Design%20Pattern_%20DecorativeAndComposite.pdf"
         },
         {
             date: "2019-05-06",
-            headline: "Delivered a SOLID principles session focused on improving software design quality, maintainability, and engineering decision making.",
+            headline: "Delivered a SOLID principles session at Gräbert GmbH (In-Person), focused on improving software design quality, maintainability, and engineering decision making. 🛠️",
             link: "../resources/docs/talks/SOLID.pdf"
         },
         {
             date: "2019-05-06",
-            headline: "Delivered a Dimension Unit handling session to improve CAD consistency, measurement correctness, and workflow reliability.",
+            headline: "Delivered a Dimension Unit handling session at Gräbert GmbH (In-Person) to improve CAD consistency, measurement correctness, and workflow reliability. 📐",
             link: "../resources/docs/talks/ON-TalkaboutDimensionUnit-070219-0452.pdf"
         },
         {
             date: "2019-04-04",
-            headline: "Presented a session on the basics of computer graphics, explaining core concepts and their practical importance in real engineering and software applications.",
+            headline: "Presented a session at Gräbert GmbH (In-Person) on the basics of computer graphics, explaining core concepts and their practical importance in real engineering and software applications. 🎨",
             link: "../resources/docs/talks/Basics%20of%20Computer%20Grapics%20and%20Its%20Importance.pdf"
         },
         {
             date: "2018-12-27",
-            headline: "Presented the 'Philosophy behind OdRxObject' session to explain the technical architecture, underlying design ideas, and practical significance of the object model.",
+            headline: "Presented the 'Philosophy behind OdRxObject' session at Gräbert GmbH (In-Person) to explain the technical architecture, underlying design ideas, and practical significance of the object model. 🧠",
             link: "../resources/docs/talks/Philosophy%20behind%20OdRxObject.pptx.pdf"
         }
     ],
