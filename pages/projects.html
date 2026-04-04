@@ -18,7 +18,7 @@
                 <ul class="main-nav">
                     <li><a href="index.html">About</a></li>
                     <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="blogs.html">Talks &amp; Blogs</a></li>
                     <li><a href="journey.html">Journey</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="publications.html">Publications</a></li>
@@ -36,6 +36,7 @@
         </section>
         <section class="section-block">
             <div class="container">
+                <div id="projectFilters" class="news-tabs" aria-label="Project filters"></div>
                 <div class="project-list" data-each="projects">
                     <template>
                         <article class="project-item">
@@ -44,7 +45,10 @@
                                 <span class="project-status" data-status="{{status}}">{{status}}</span>
                             </div>
 
-                            <p class="project-timeline"><strong>Timeline:</strong> {{timeline}}</p>
+                            <p class="project-timeline"><strong>Timeline:</strong> {{timeline}} ·
+                                <strong>Owner:</strong>
+                                {{owner}}
+                            </p>
 
                             <p>{{description}}</p>
 
@@ -57,7 +61,11 @@
 
                             <p class="project-purpose"><strong>Purpose:</strong> {{purpose}}</p>
 
-                            <a href="{{link}}" target="_blank" class="item-link">Open project →</a>
+                            <div class="project-links">
+                                <a href="{{link}}" target="_blank" class="item-link project-link">Open project →</a>
+                                <a href="{{presentation_link}}" class="item-link project-presentation-link">View
+                                    presentation →</a>
+                            </div>
                         </article>
                     </template>
                 </div>
@@ -78,6 +86,53 @@
     <script src="../resources/js/site-config.js"></script>
     <script src="../resources/js/template-bind.js"></script>
     <script src="../resources/js/theme-toggle.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const filtersWrap = document.getElementById("projectFilters");
+            const items = Array.from(document.querySelectorAll(".project-list .project-item"));
+            if (!filtersWrap || items.length === 0) return;
+
+            const statusGroup = (text) => {
+                const s = String(text || "").toLowerCase();
+                if (s.includes("progress") || s.includes("active")) return "active";
+                if (s.includes("completed")) return "completed";
+                if (s.includes("discontinued")) return "discontinued";
+                return "other";
+            };
+
+            const applyFilter = (key) => {
+                items.forEach((item) => {
+                    const statusText = item.querySelector(".project-status")?.textContent || "";
+                    const group = statusGroup(statusText);
+                    item.style.display = (key === "all" || key === group) ? "block" : "none";
+                });
+
+                filtersWrap.querySelectorAll("button").forEach((btn) => {
+                    const active = btn.dataset.key === key;
+                    btn.classList.toggle("active", active);
+                    btn.setAttribute("aria-pressed", active ? "true" : "false");
+                });
+            };
+
+            const createTab = (label, key) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "news-tab";
+                btn.textContent = label;
+                btn.dataset.key = key;
+                btn.setAttribute("aria-pressed", "false");
+                btn.addEventListener("click", () => applyFilter(key));
+                filtersWrap.appendChild(btn);
+            };
+
+            createTab("Active", "active");
+            createTab("Completed", "completed");
+            createTab("Discontinued", "discontinued");
+            createTab("All", "all");
+
+            applyFilter("all");
+        });
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document Viewer | {Name}</title>
+    <link rel="icon" type="image/png" href="../resources/img/karkid.png" />
+    <link rel="stylesheet" type="text/css" href="../venders/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../venders/css/ionicons.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/css/minimal.css" />
+</head>
+
+<body class="pdf-viewer-page">
+    <header class="site-header">
+        <div class="container nav-wrap"><a class="brand" href="index.html">{Name}</a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blogs.html" class="active">Talks &amp; Blogs</a></li>
+                    <li><a href="journey.html">Journey</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                </ul>
+                <button class="theme-toggle" type="button" aria-pressed="false">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 id="docTitle">Document Viewer</h1>
+                <p class="page-intro" id="docSubtitle">View presentation and PDF files directly within the site.</p>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="container">
+                <article class="pdf-viewer-card">
+                    <div class="pdf-viewer-toolbar">
+                        <span class="pdf-viewer-badge"><i class="ion-document-text"></i> Embedded PDF Viewer</span>
+                        <div class="pdf-viewer-actions">
+                            <a id="downloadLink" class="item-link pdf-action" href="#" target="_blank"
+                                rel="noopener">Open in new tab</a>
+                            <a id="downloadFileLink" class="item-link pdf-action secondary" href="#" target="_blank"
+                                rel="noopener" download>Download PDF</a>
+                        </div>
+                    </div>
+
+                    <div class="pdf-pager" id="pdfPager" aria-label="PDF page navigation">
+                        <button id="prevPageBtn" class="pdf-page-btn" type="button"
+                            aria-label="Previous page">&lt;</button>
+                        <span id="pageIndicator" class="pdf-page-indicator">1/1</span>
+                        <button id="nextPageBtn" class="pdf-page-btn" type="button" aria-label="Next page">&gt;</button>
+                    </div>
+
+                    <div class="pdf-frame-wrap" id="pdfFrameWrap">
+                        <div class="pdf-canvas-stage" id="pdfCanvasStage">
+                            <canvas id="pdfCanvas" aria-label="PDF document"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="pdf-frame-wrap" id="nativeFrameWrap" style="display:none;">
+                        <iframe id="nativePdfFrame" title="PDF Viewer Fallback"></iframe>
+                    </div>
+
+                    <div id="viewerError" class="pdf-viewer-error" style="display:none;"></div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div class="quick-contact" aria-label="Quick contact links"><a href="{LinkedIn_URL}" target="_blank"
+            title="LinkedIn"><i class="ion-social-linkedin"></i></a><a href="{GitHub_URL}" target="_blank"
+            title="GitHub"><i class="ion-social-github"></i></a><a href="{CV_URL}" target="_blank" title="CV"><i
+                class="ion-ios-cloud-download"></i></a></div>
+
+    <footer class="site-footer">
+        <div class="container footer-row">
+            <p>© {Year} {Name}</p>
+            <p class="footer-links"><a href="{LinkedIn_URL}" target="_blank">LinkedIn</a> · <a href="{GitHub_URL}"
+                    target="_blank">GitHub</a> · <a href="{CV_URL}" target="_blank">CV</a></p>
+        </div>
+    </footer>
+
+    <script src="../resources/js/site-config.js"></script>
+    <script src="../resources/js/template-bind.js"></script>
+    <script src="../resources/js/theme-toggle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const file = params.get("file") || "";
+            const title = params.get("title") || "Document Viewer";
+            const fileType = (params.get("file_type") || "").toLowerCase();
+            const itemDate = params.get("date") || "";
+            const itemEvent = params.get("event") || "";
+            const itemMode = params.get("mode") || "";
+            const itemLocation = params.get("location") || "";
+            const itemAuthor = params.get("author") || "";
+            const itemStatus = params.get("status") || "";
+            const isSlideDeck = fileType === "ppt" || fileType === "pptx";
+
+            const titleEl = document.getElementById("docTitle");
+            const subtitleEl = document.getElementById("docSubtitle");
+            const frameWrapEl = document.getElementById("pdfFrameWrap");
+            const canvasStageEl = document.getElementById("pdfCanvasStage");
+            const canvasEl = document.getElementById("pdfCanvas");
+            const pagerEl = document.getElementById("pdfPager");
+            const prevBtn = document.getElementById("prevPageBtn");
+            const nextBtn = document.getElementById("nextPageBtn");
+            const pageIndicatorEl = document.getElementById("pageIndicator");
+            const nativeFrameWrapEl = document.getElementById("nativeFrameWrap");
+            const nativeFrameEl = document.getElementById("nativePdfFrame");
+            const errorEl = document.getElementById("viewerError");
+            const downloadEl = document.getElementById("downloadLink");
+            const downloadFileEl = document.getElementById("downloadFileLink");
+
+            const ctx = canvasEl.getContext("2d");
+            let pdfDoc = null;
+            let pageNum = 1;
+            let pageCount = 1;
+            let isRendering = false;
+            let pendingPage = null;
+            let resizeTimer = null;
+            let useNativePager = false;
+            let nativePage = 1;
+
+            const primaryMeta = [itemDate, itemEvent, itemMode, itemLocation].filter(Boolean).join(" • ");
+            const secondaryMeta = [itemAuthor ? `By ${itemAuthor}` : "", itemStatus].filter(Boolean).join(" • ");
+            const combinedMeta = [primaryMeta, secondaryMeta].filter(Boolean).join(" | ");
+
+            titleEl.textContent = title;
+            subtitleEl.textContent = isSlideDeck
+                ? (combinedMeta || "Presentation mode: use < and > to move between slides.")
+                : "View this document directly on the site with quick open and download options.";
+
+            if (isSlideDeck) {
+                canvasStageEl.classList.add("is-slide");
+            }
+
+            const isAllowedPath = file.startsWith("../resources/docs/") || file.startsWith("/resources/docs/") || file.startsWith("https://");
+            const isPdf = /\.pdf(\?|$)/i.test(file);
+
+            if (!file || !isAllowedPath || !isPdf) {
+                frameWrapEl.style.display = "none";
+                pagerEl.style.display = "none";
+                downloadEl.style.display = "none";
+                downloadFileEl.style.display = "none";
+                errorEl.style.display = "block";
+                errorEl.textContent = "Invalid or unsupported document link.";
+                return;
+            }
+
+            downloadEl.href = file;
+            downloadFileEl.href = file;
+
+            const updatePager = () => {
+                if (useNativePager) {
+                    pageIndicatorEl.textContent = `${nativePage}/?`;
+                    prevBtn.disabled = nativePage <= 1;
+                    nextBtn.disabled = false;
+                    return;
+                }
+                pageIndicatorEl.textContent = `${pageNum}/${pageCount}`;
+                prevBtn.disabled = pageNum <= 1;
+                nextBtn.disabled = pageNum >= pageCount;
+            };
+
+            const setNativePage = (value) => {
+                nativePage = Math.max(1, value);
+                const nativeSrc = `${file}#page=${nativePage}&zoom=FitH&pagemode=none&toolbar=0&navpanes=0&scrollbar=0`;
+                // Force plugin refresh so page anchors are applied consistently.
+                nativeFrameEl.src = "about:blank";
+                requestAnimationFrame(() => {
+                    nativeFrameEl.src = nativeSrc;
+                });
+                updatePager();
+            };
+
+            const showNativeFallback = (note) => {
+                frameWrapEl.style.display = "none";
+                nativeFrameWrapEl.style.display = "block";
+
+                if (isSlideDeck) {
+                    useNativePager = true;
+                    pagerEl.style.display = "inline-flex";
+                    setNativePage(nativePage);
+                } else {
+                    useNativePager = false;
+                    pagerEl.style.display = "none";
+                    nativeFrameEl.src = `${file}#toolbar=0&navpanes=0&scrollbar=0`;
+                }
+
+                if (note) {
+                    errorEl.style.display = "block";
+                    errorEl.textContent = note;
+                } else {
+                    errorEl.style.display = "none";
+                    errorEl.textContent = "";
+                }
+            };
+
+            const queueRenderPage = (num) => {
+                if (isRendering) {
+                    pendingPage = num;
+                    return;
+                }
+                renderPage(num);
+            };
+
+            const renderPage = async (num) => {
+                if (!pdfDoc) return;
+                isRendering = true;
+
+                try {
+                    const page = await pdfDoc.getPage(num);
+                    const baseViewport = page.getViewport({ scale: 1 });
+                    const availableWidth = Math.max(320, canvasStageEl.clientWidth - 24);
+                    const availableHeight = Math.max(260, canvasStageEl.clientHeight - 24);
+                    const widthScale = availableWidth / baseViewport.width;
+                    const heightScale = availableHeight / baseViewport.height;
+                    const scale = isSlideDeck ? Math.min(widthScale, heightScale) : widthScale;
+                    const viewport = page.getViewport({ scale });
+                    const dpr = window.devicePixelRatio || 1;
+
+                    canvasEl.width = Math.floor(viewport.width * dpr);
+                    canvasEl.height = Math.floor(viewport.height * dpr);
+                    canvasEl.style.width = `${Math.floor(viewport.width)}px`;
+                    canvasEl.style.height = `${Math.floor(viewport.height)}px`;
+
+                    await page.render({
+                        canvasContext: ctx,
+                        viewport,
+                        transform: [dpr, 0, 0, dpr, 0, 0]
+                    }).promise;
+
+                    pageNum = num;
+                    updatePager();
+                } catch (err) {
+                    showNativeFallback();
+                } finally {
+                    isRendering = false;
+                    if (pendingPage !== null) {
+                        const nextPending = pendingPage;
+                        pendingPage = null;
+                        renderPage(nextPending);
+                    }
+                }
+            };
+
+            prevBtn.addEventListener("click", () => {
+                if (useNativePager) {
+                    if (nativePage <= 1) return;
+                    setNativePage(nativePage - 1);
+                    return;
+                }
+                if (pageNum <= 1) return;
+                queueRenderPage(pageNum - 1);
+            });
+
+            nextBtn.addEventListener("click", () => {
+                if (useNativePager) {
+                    setNativePage(nativePage + 1);
+                    return;
+                }
+                if (pageNum >= pageCount) return;
+                queueRenderPage(pageNum + 1);
+            });
+
+            window.addEventListener("resize", () => {
+                if (!pdfDoc) return;
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => queueRenderPage(pageNum), 120);
+            });
+
+            if (!window.pdfjsLib) {
+                showNativeFallback();
+                return;
+            }
+
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+            window.pdfjsLib.getDocument({ url: file }).promise
+                .then((doc) => {
+                    useNativePager = false;
+                    pdfDoc = doc;
+                    pageCount = doc.numPages || 1;
+                    updatePager();
+                    queueRenderPage(1);
+                })
+                .catch(() => {
+                    showNativeFallback();
+                });
+        })();
+    </script>
+</body>
+
+</html>
