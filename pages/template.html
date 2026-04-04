@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+            Simple placeholder template:
+            Core: {Page_Title}, {Name}, {Current_Role}, {Summary}, {Section_Title}, {Section_Body}
+            About: {About_Intro}, {About_Background}, {About_Collaboration}
+            Profile: {Current_Position_Detail}, {Academic_Direction}, {Near_Term_Goal}, {Affiliation}
+            Links: {LinkedIn_URL}, {GitHub_URL}, {CV_URL}, {Email}
+            Footer: {Year}
+        -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{Page_Title} | {Name}</title>
+    <link rel="icon" type="image/png" href="../resources/img/karkid.png" />
+    <link rel="stylesheet" type="text/css" href="../venders/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../venders/css/ionicons.css" />
+    <link rel="stylesheet" type="text/css" href="../resources/css/minimal.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container nav-wrap">
+            <a class="brand" href="index.html">{Name}</a>
+            <nav>
+                <ul class="main-nav">
+                    <li><a href="index.html" class="active">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="journey.html">Journey</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                </ul>
+                <button class="theme-toggle" type="button" aria-pressed="false">🌙 Dark</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Content Starts -->
+        <section class="page-hero">
+            <div class="container narrow">
+                <h1>{Page_Title}</h1>
+                <p class="page-intro">{Summary}</p>
+            </div>
+        </section>
+
+        <section class="section-block section-muted">
+            <div class="container narrow">
+                <div class="content-card">
+                    <h3>{Section_Title}</h3>
+                    <p>{Section_Body}</p>
+                </div>
+            </div>
+        </section>
+        <!-- Page Content Ends -->
+    </main>
+
+    <div class="quick-contact" aria-label="Quick contact links">
+        <a href="{LinkedIn_URL}" target="_blank" title="LinkedIn"><i class="ion-social-linkedin"></i></a>
+        <a href="{GitHub_URL}" target="_blank" title="GitHub"><i class="ion-social-github"></i></a>
+        <a href="{CV_URL}" target="_blank" title="CV"><i class="ion-ios-cloud-download"></i></a>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container footer-row">
+            <p>© {Year} {Name}</p>
+            <p class="footer-links">
+                <a href="{LinkedIn_URL}" target="_blank">LinkedIn</a>
+                · <a href="{GitHub_URL}" target="_blank">GitHub</a>
+                · <a href="{CV_URL}" target="_blank">CV</a>
+            </p>
+        </div>
+    </footer>
+    <script src="../resources/js/site-config.js"></script>
+    <script src="../resources/js/template-bind.js"></script>
+    <script src="../resources/js/theme-toggle.js"></script>
+</body>
+
+</html>
