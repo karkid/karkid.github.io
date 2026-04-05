@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#0c1f14"/>
+  <rect width="800" height="500" fill="url(#eg)"/>
+  <defs>
+    <radialGradient id="eg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#047857" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0c1f14" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Compass circle -->
+  <circle cx="400" cy="245" r="145" stroke="#34d399" stroke-width="3" fill="#052e16" opacity="0.85"/>
+  <circle cx="400" cy="245" r="135" stroke="#065f46" stroke-width="1" fill="none"/>
+  <!-- Tick marks -->
+  <g stroke="#34d399" stroke-width="2" opacity="0.5">
+    <line x1="400" y1="112" x2="400" y2="124"/>
+    <line x1="400" y1="366" x2="400" y2="378"/>
+    <line x1="267" y1="245" x2="279" y2="245"/>
+    <line x1="521" y1="245" x2="533" y2="245"/>
+  </g>
+  <!-- Cardinal letters -->
+  <text x="400" y="104" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="bold" fill="#34d399">N</text>
+  <text x="400" y="394" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#6ee7b7" opacity="0.7">S</text>
+  <text x="256" y="251" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#6ee7b7" opacity="0.7">W</text>
+  <text x="544" y="251" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#6ee7b7" opacity="0.7">E</text>
+  <!-- North needle (teal) -->
+  <polygon points="400,135 390,250 400,238 410,250" fill="#34d399"/>
+  <!-- South needle (muted) -->
+  <polygon points="400,355 390,240 400,252 410,240" fill="#065f46"/>
+  <!-- Centre dot -->
+  <circle cx="400" cy="245" r="8" fill="#34d399"/>
+  <circle cx="400" cy="245" r="4" fill="#052e16"/>
+</svg>

@@ -7,6 +7,7 @@
         window.SITE_DATA_JOURNEY,
         window.SITE_DATA_NEWS,
         window.SITE_DATA_PUBLICATIONS,
+        window.SITE_DATA_MISCELLANEOUS,
     ];
 
     window.SITE_TEMPLATE_VARS = Object.assign({}, ...sections.filter(Boolean));
@@ -44,6 +45,13 @@
         publications: {
             required: ["key", "author", "title", "year", "type"],
             enums: { type: ["article", "inproceedings", "book", "misc"] },
+        },
+        miscellaneous: {
+            required: ["category", "note", "date"],
+            enums: {
+                category: ["Reading", "Watching", "Listening", "Gaming", "Exploring", "Reflections"],
+            },
+            types: { tags: "array", metadata: "object" },
         },
     };
 

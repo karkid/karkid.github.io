@@ -6,11 +6,12 @@
 
     const navItems = [
         { key: "about", href: "index.html", label: "About" },
-        { key: "projects", href: "projects.html", label: "Projects" },
-        { key: "blogs", href: "blogs.html", label: "Talks &amp; Blogs" },
         { key: "journey", href: "journey.html", label: "Journey" },
-        { key: "news", href: "news.html", label: "News" },
+        { key: "projects", href: "projects.html", label: "Projects" },
         { key: "publications", href: "publications.html", label: "Publications" },
+        { key: "blogs", href: "blogs.html", label: "Talks &amp; Blogs" },
+        { key: "miscellaneous", href: "miscellaneous.html", label: "Miscellaneous" },
+        { key: "news", href: "news.html", label: "News" },
     ];
 
     const buildHeader = (vars, activeNav, brandHidden) => {

@@ -47,6 +47,7 @@ const FILES = [
     { file: 'journey.js', globalKey: 'SITE_DATA_JOURNEY', schema: 'journey.schema.json' },
     { file: 'news.js', globalKey: 'SITE_DATA_NEWS', schema: 'news.schema.json' },
     { file: 'publications.js', globalKey: 'SITE_DATA_PUBLICATIONS', schema: 'publications.schema.json' },
+    { file: 'miscellaneous.js', globalKey: 'SITE_DATA_MISCELLANEOUS', schema: 'miscellaneous.schema.json' },
 ];
 
 // ─── ANSI helpers ────────────────────────────────────────────────────────────

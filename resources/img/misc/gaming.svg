@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#052e16"/>
+  <rect width="800" height="500" fill="url(#gg)"/>
+  <defs>
+    <radialGradient id="gg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#15803d" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#052e16" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Controller body -->
+  <path d="M270 210 Q250 200 230 230 L215 300 Q210 340 250 350 Q285 358 310 330 L340 300 H460 L490 330 Q515 358 550 350 Q590 340 585 300 L570 230 Q550 200 530 210 L490 205 Q450 195 400 195 Q350 195 310 205 Z" fill="#14532d" stroke="#4ade80" stroke-width="2.5"/>
+  <!-- Left D-pad -->
+  <rect x="268" y="255" width="16" height="44" rx="4" fill="#4ade80" opacity="0.85"/>
+  <rect x="248" y="271" width="16" height="14" rx="3" fill="#4ade80" opacity="0.85"/>
+  <rect x="300" y="271" width="16" height="14" rx="3" fill="#4ade80" opacity="0.85"/>
+  <!-- Right buttons -->
+  <circle cx="496" cy="258" r="10" fill="#4ade80" opacity="0.8"/>
+  <circle cx="522" cy="278" r="10" fill="#86efac" opacity="0.8"/>
+  <circle cx="496" cy="298" r="10" fill="#bbf7d0" opacity="0.8"/>
+  <circle cx="470" cy="278" r="10" fill="#4ade80" opacity="0.8"/>
+  <!-- Left thumbstick -->
+  <circle cx="335" cy="295" r="20" fill="#166534" stroke="#4ade80" stroke-width="2"/>
+  <circle cx="335" cy="295" r="9" fill="#4ade80" opacity="0.5"/>
+  <!-- Right thumbstick -->
+  <circle cx="455" cy="295" r="20" fill="#166534" stroke="#4ade80" stroke-width="2"/>
+  <circle cx="455" cy="295" r="9" fill="#4ade80" opacity="0.5"/>
+  <!-- Centre button -->
+  <circle cx="400" cy="270" r="14" fill="#166534" stroke="#4ade80" stroke-width="1.5"/>
+  <circle cx="400" cy="270" r="6"  fill="#4ade80" opacity="0.6"/>
+  <!-- Shoulder bumpers -->
+  <path d="M270 210 Q310 195 370 200" stroke="#4ade80" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M530 210 Q490 195 430 200" stroke="#4ade80" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.7"/>
+</svg>

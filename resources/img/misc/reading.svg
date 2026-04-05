@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#1e1b4b"/>
+  <rect width="800" height="500" fill="url(#rg)"/>
+  <defs>
+    <radialGradient id="rg" cx="35%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#4338ca" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Open book -->
+  <g transform="translate(400,250)" opacity="0.85">
+    <!-- Left page -->
+    <path d="M-10 -90 Q-80 -95 -150 -70 L-150 90 Q-80 65 -10 70 Z" fill="#4f46e5" stroke="#818cf8" stroke-width="2"/>
+    <!-- Right page -->
+    <path d="M10 -90 Q80 -95 150 -70 L150 90 Q80 65 10 70 Z" fill="#6366f1" stroke="#818cf8" stroke-width="2"/>
+    <!-- Spine -->
+    <rect x="-10" y="-90" width="20" height="160" rx="3" fill="#312e81"/>
+    <!-- Lines on left page -->
+    <line x1="-130" y1="-30" x2="-25" y2="-35" stroke="#818cf8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="-130" y1="-8"  x2="-25" y2="-12" stroke="#818cf8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="-130" y1="14"  x2="-25" y2="10"  stroke="#818cf8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="-130" y1="36"  x2="-60" y2="32"  stroke="#818cf8" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+    <!-- Lines on right page -->
+    <line x1="25" y1="-35" x2="130" y2="-30" stroke="#a5b4fc" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="25" y1="-12" x2="130" y2="-8"  stroke="#a5b4fc" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="25" y1="10"  x2="130" y2="14"  stroke="#a5b4fc" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="25" y1="32"  x2="80"  y2="36"  stroke="#a5b4fc" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+  </g>
+</svg>

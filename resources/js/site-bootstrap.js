@@ -28,6 +28,7 @@
         'site-data/journey.js',
         'site-data/news.js',
         'site-data/publications.js',
+        'site-data/miscellaneous.js',
         'site-config.js',
         'site-shell.js',
         'template-bind.js',
