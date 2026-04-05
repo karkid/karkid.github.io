@@ -1,0 +1,92 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "site-data/projects",
+    "title": "Site Projects",
+    "description": "window.SITE_DATA_PROJECTS",
+    "type": "object",
+    "required": [
+        "project_intro",
+        "projects"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "project_intro": {
+            "type": "string",
+            "minLength": 1
+        },
+        "projects": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "type": "object",
+                "required": [
+                    "title",
+                    "status",
+                    "timeline",
+                    "technology"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "summary": {
+                        "type": "string"
+                    },
+                    "link": {
+                        "type": "string"
+                    },
+                    "presentation_link": {
+                        "type": "string"
+                    },
+                    "Repo": {
+                        "type": "string",
+                        "enum": [
+                            "Public",
+                            "Private"
+                        ]
+                    },
+                    "owner": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "In Progress",
+                            "Completed",
+                            "Discontinued",
+                            "Active"
+                        ]
+                    },
+                    "timeline": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "technology": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "domain": {
+                        "type": "string"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "pinned": {
+                        "type": "boolean"
+                    },
+                    "purpose": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

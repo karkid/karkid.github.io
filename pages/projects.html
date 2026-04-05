@@ -5,28 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects | {Name}</title>
-    <link rel="icon" type="image/svg+xml" href="../resources/img/favicon-graph.svg" />
-    <link rel="stylesheet" type="text/css" href="../venders/css/normalize.css" />
-    <link rel="stylesheet" type="text/css" href="../venders/css/ionicons.css" />
-    <link rel="stylesheet" type="text/css" href="../resources/css/minimal.css" />
+    <script src="../resources/js/site-head.js"></script>
 </head>
 
-<body>
-    <header class="site-header">
-        <div class="container nav-wrap"><a class="brand" href="index.html">{Name}</a>
-            <nav>
-                <ul class="main-nav">
-                    <li><a href="index.html">About</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="blogs.html">Talks &amp; Blogs</a></li>
-                    <li><a href="journey.html">Journey</a></li>
-                    <li><a href="news.html">News</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                </ul>
-                <button class="theme-toggle" type="button" aria-pressed="false">🌙 Dark</button>
-            </nav>
-        </div>
-    </header>
+<body data-active-nav="projects">
+    <div id="site-header"></div>
     <main class="projects-page">
         <section class="page-hero">
             <div class="container">
@@ -72,22 +55,11 @@
             </div>
         </section>
     </main>
-    <div class="quick-contact" aria-label="Quick contact links"><a href="{LinkedIn_URL}" target="_blank"
-            title="LinkedIn"><i class="ion-social-linkedin"></i></a><a href="{GitHub_URL}" target="_blank"
-            title="GitHub"><i class="ion-social-github"></i></a><a href="{CV_URL}" target="_blank" title="CV"><i
-                class="ion-ios-cloud-download"></i></a></div>
-    <footer class="site-footer">
-        <div class="container footer-row">
-            <p>© {Year} {Name}</p>
-            <p class="footer-links"><a href="{LinkedIn_URL}" target="_blank">LinkedIn</a> · <a href="{GitHub_URL}"
-                    target="_blank">GitHub</a> · <a href="{CV_URL}" target="_blank">CV</a></p>
-        </div>
-    </footer>
-    <script src="../resources/js/site-config.js"></script>
-    <script src="../resources/js/template-bind.js"></script>
-    <script src="../resources/js/theme-toggle.js"></script>
+    <div id="site-quick-contact"></div>
+    <div id="site-footer"></div>
+    <script src="../resources/js/site-bootstrap.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("site:ready", () => {
             const filtersWrap = document.getElementById("projectFilters");
             const items = Array.from(document.querySelectorAll(".project-list .project-item"));
             if (!filtersWrap || items.length === 0) return;

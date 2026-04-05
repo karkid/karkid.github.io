@@ -1,0 +1,12 @@
+{
+    "name": "karkid-portfolio",
+    "description": "Personal portfolio site — data validation tooling only, not a Node app",
+    "private": true,
+    "scripts": {
+        "validate": "node scripts/validate-data.js"
+    },
+    "devDependencies": {
+        "ajv": "^8.17.1",
+        "ajv-formats": "^3.0.1"
+    }
+}

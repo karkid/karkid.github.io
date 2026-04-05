@@ -1,0 +1,110 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "site-data/blogs",
+    "title": "Site Blogs & Talks",
+    "description": "window.SITE_DATA_BLOGS",
+    "type": "object",
+    "required": [
+        "blogs_intro",
+        "blogs"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "blogs_intro": {
+            "type": "string",
+            "minLength": 1
+        },
+        "blogs": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "title",
+                    "summary",
+                    "link",
+                    "date",
+                    "author",
+                    "status",
+                    "type"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "summary": {
+                        "type": "string"
+                    },
+                    "link": {
+                        "type": "string"
+                    },
+                    "date": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "timeToRead": {
+                        "type": "string"
+                    },
+                    "featured": {
+                        "type": "boolean"
+                    },
+                    "author": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "Presented",
+                            "Draft",
+                            "Published",
+                            "Archived"
+                        ]
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "talk",
+                            "blog"
+                        ]
+                    },
+                    "event": {
+                        "type": "string"
+                    },
+                    "file_type": {
+                        "type": "string",
+                        "enum": [
+                            "pdf",
+                            "pptx",
+                            "ppt",
+                            "doc",
+                            "docx",
+                            "url"
+                        ]
+                    },
+                    "mode": {
+                        "type": "string",
+                        "enum": [
+                            "In-Person",
+                            "Online",
+                            "Hybrid"
+                        ]
+                    },
+                    "location": {
+                        "type": "string"
+                    },
+                    "extra_meta": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -127,7 +127,21 @@
         });
     };
 
-    document.addEventListener("DOMContentLoaded", () => {
+    // Works whether this script is loaded statically or dynamically via site-bootstrap.js.
+    var _domReady = function (fn) {
+        if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); }
+        else { fn(); }
+    };
+    _domReady(() => {
+        // Pre-resolve cross-references in scalar vars before the DOM walk.
+        // This allows one var's value to reference another, e.g.:
+        //   About_Collaboration: "... contact me at {Email}."
+        // Without this, {Email} would remain unresolved because the DOM walker
+        // is single-pass and won't revisit a text node after it has been replaced.
+        Object.keys(vars).forEach((key) => {
+            if (typeof vars[key] === 'string') vars[key] = replaceTokens(vars[key]);
+        });
+
         walkNodes(document.body, replaceTokens);
         document.title = replaceTokens(document.title);
         renderArrays();

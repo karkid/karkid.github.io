@@ -1,0 +1,25 @@
+# ── Node ─────────────────────────────────────────────────────────────────────
+# Installed by npm install — never commit; restored with npm ci in CI/CD.
+node_modules/
+
+# ── Python ───────────────────────────────────────────────────────────────────
+# Local virtual environment used for tooling (not part of the site itself).
+.venv/
+__pycache__/
+*.py[cod]
+
+# ── macOS ────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ── Editors ──────────────────────────────────────────────────────────────────
+# VS Code workspace state (settings.json is intentionally tracked).
+.vscode/*.log
+
+# JetBrains
+.idea/
+
+# ── Logs & temp ──────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*

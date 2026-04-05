@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "strict": false,
+        "noEmit": true,
+        "target": "ES2017",
+        "lib": [
+            "ES2017",
+            "DOM"
+        ]
+    },
+    "include": [
+        "resources/js/site-data/**"
+    ],
+    "exclude": [
+        "node_modules",
+        "venders"
+    ]
+}

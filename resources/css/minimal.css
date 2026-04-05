@@ -861,7 +861,7 @@ body[data-theme="dark"] .project-meta span {
 
 .pdf-canvas-stage.is-slide {
     place-items: center;
-    overflow: hidden;
+    overflow: auto;
 }
 
 #pdfCanvas {
@@ -941,7 +941,8 @@ body.pdf-viewer-page {
     height: 100dvh;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     padding-bottom: 0;
 }
 
