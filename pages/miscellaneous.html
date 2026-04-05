@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Miscellaneous | {Name}</title>
+    <script src="../resources/js/site-head.js"></script>
+</head>
+
+<body data-active-nav="miscellaneous">
+    <div id="site-header"></div>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1>Miscellaneous</h1>
+                <p class="page-intro">{miscellaneous_intro}</p>
+            </div>
+        </section>
+        <section class="section-block">
+            <div class="container">
+                <div id="miscPrimaryFilters" class="news-tabs" aria-label="Miscellaneous categories"></div>
+                <div id="miscSecondaryFilters" class="news-tabs misc-secondary-tabs"
+                    aria-label="Miscellaneous subfilters"></div>
+                <div class="misc-list" data-each="miscellaneous">
+                    <template>
+                        <article class="misc-item" data-category="{{category}}" data-tags="{{tags_key}}"
+                            data-flag="{{countryFlag}}" data-location="{{location}}" data-geotag="{{geotag}}"
+                            data-map-url="{{mapUrl}}">
+                            <figure class="misc-media">
+                                <img class="misc-image" src="{{imageUrl}}" alt="{{title}}" loading="lazy"
+                                    decoding="async" />
+                            </figure>
+                            <div class="misc-overlay">
+                                <div class="misc-top">
+                                    <p class="eyebrow misc-date">{{display_date}}</p>
+                                    <p class="misc-tags">{{tags_summary}}</p>
+                                </div>
+                                <h3>{{title}}</h3>
+                                <p class="misc-place">{{location_label}}</p>
+                                <p class="misc-note">{{note}}</p>
+                                <p class="misc-meta">{{metadata_summary}}</p>
+                                <a href="{{sourceUrl}}" target="_blank" rel="noopener noreferrer"
+                                    class="item-link misc-link">Open reference →</a>
+                            </div>
+                        </article>
+                    </template>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="site-quick-contact"></div>
+    <div id="site-footer"></div>
+    <script src="../resources/js/site-bootstrap.js"></script>
+    <script>
+        document.addEventListener("site:ready", () => {
+            const primaryFiltersWrap = document.getElementById("miscPrimaryFilters");
+            const secondaryFiltersWrap = document.getElementById("miscSecondaryFilters");
+            const listWrap = document.querySelector(".misc-list");
+            const items = Array.from(document.querySelectorAll(".misc-list .misc-item"));
+            if (!primaryFiltersWrap || !secondaryFiltersWrap || !listWrap || items.length === 0) return;
+
+            const filterConfig = {
+                Reading: ["Ongoing", "Completed", "Favorite", "To Read"],
+                Watching: ["Ongoing", "Completed", "Favorite", "Watchlist"],
+                Listening: ["Current", "Favorite", "Podcast", "Music"],
+                Gaming: ["Playing", "Completed", "Favorite"],
+                Exploring: ["Visited", "Planned", "Nature", "Cafe"],
+                Reflections: ["Idea", "Insight", "Question", "Quote", "Note"],
+            };
+
+            const normalizeTag = (value) => {
+                const base = String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+                const aliases = {
+                    favorite: "favorite",
+                    favorites: "favorite",
+                    cafe: "cafe",
+                    cafes: "cafe",
+                    toread: "toread",
+                    ongoing: "ongoing",
+                    completed: "completed",
+                    watchlist: "watchlist",
+                    current: "current",
+                    podcast: "podcast",
+                    podcasts: "podcast",
+                    music: "music",
+                    playing: "playing",
+                    visited: "visited",
+                    planned: "planned",
+                    nature: "nature",
+                    idea: "idea",
+                    ideas: "idea",
+                    insight: "insight",
+                    insights: "insight",
+                    question: "question",
+                    questions: "question",
+                    quote: "quote",
+                    quotes: "quote",
+                    note: "note",
+                    notes: "note",
+                };
+                return aliases[base] || base;
+            };
+
+            let activeCategory = "Reading";
+            let activeTag = "";
+
+            const applyFilter = () => {
+                items.forEach((item) => {
+                    const category = item.dataset.category || "";
+                    const tags = (item.dataset.tags || "")
+                        .split("|")
+                        .filter(Boolean)
+                        .map(normalizeTag);
+                    const categoryMatch = category === activeCategory;
+                    const tagMatch = !activeTag || tags.includes(normalizeTag(activeTag));
+                    item.style.display = categoryMatch && tagMatch ? "block" : "none";
+                });
+
+                listWrap.classList.toggle("reflections-mode", activeCategory === "Reflections");
+
+                primaryFiltersWrap.querySelectorAll("button").forEach((btn) => {
+                    const active = btn.dataset.key === activeCategory;
+                    btn.classList.toggle("active", active);
+                    btn.setAttribute("aria-pressed", active ? "true" : "false");
+                });
+
+                secondaryFiltersWrap.querySelectorAll("button").forEach((btn) => {
+                    const active = btn.dataset.key === activeTag;
+                    btn.classList.toggle("active", active);
+                    btn.setAttribute("aria-pressed", active ? "true" : "false");
+                });
+            };
+
+            const renderSecondaryFilters = () => {
+                secondaryFiltersWrap.innerHTML = "";
+
+                filterConfig[activeCategory].forEach((key) => {
+                    const btn = document.createElement("button");
+                    btn.type = "button";
+                    btn.className = "news-tab";
+                    btn.dataset.key = key;
+                    btn.textContent = key;
+                    btn.setAttribute("aria-pressed", "false");
+                    btn.addEventListener("click", () => {
+                        activeTag = activeTag === key ? "" : key;
+                        applyFilter();
+                    });
+                    secondaryFiltersWrap.appendChild(btn);
+                });
+            };
+
+            Object.keys(filterConfig).forEach((key) => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "news-tab";
+                btn.dataset.key = key;
+                btn.textContent = key;
+                btn.setAttribute("aria-pressed", "false");
+                btn.addEventListener("click", () => {
+                    activeCategory = key;
+                    activeTag = "";
+                    renderSecondaryFilters();
+                    applyFilter();
+                });
+                primaryFiltersWrap.appendChild(btn);
+            });
+
+            renderSecondaryFilters();
+            applyFilter();
+        });
+    </script>
+</body>
+
+</html>

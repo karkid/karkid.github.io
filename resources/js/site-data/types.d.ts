@@ -133,6 +133,36 @@ interface SiteDataPublications {
     publications: SitePublication[];
 }
 
+// ─── Miscellaneous ───────────────────────────────────────────────────────────
+
+type SiteMiscellaneousCategory = "Reading" | "Watching" | "Listening" | "Gaming" | "Exploring" | "Reflections";
+
+type SiteMiscellaneousMetadataValue =
+    | string
+    | number
+    | boolean
+    | Record<string, string | number | boolean>;
+
+interface SiteMiscellaneousEntry {
+    id?: string | number;
+    category: SiteMiscellaneousCategory;
+    title?: string;
+    type?: string;
+    note: string;
+    imageUrl?: string;
+    tags?: string[];
+    metadata?: Record<string, SiteMiscellaneousMetadataValue>;
+    sourceUrl?: string;
+    date: string;
+    createdAt?: string;
+    updatedAt?: string;
+}
+
+interface SiteDataMiscellaneous {
+    miscellaneous_intro: string;
+    miscellaneous: SiteMiscellaneousEntry[];
+}
+
 // ─── Global Window augmentation ──────────────────────────────────────────────
 // Tells TypeScript (and VS Code's checkJs) what types these globals have, so
 // that assignments in each site-data/*.js file are validated against the shapes above.
@@ -145,6 +175,7 @@ declare global {
         SITE_DATA_JOURNEY: SiteDataJourney;
         SITE_DATA_NEWS: SiteDataNews;
         SITE_DATA_PUBLICATIONS: SiteDataPublications;
+        SITE_DATA_MISCELLANEOUS: SiteDataMiscellaneous;
     }
 }
 

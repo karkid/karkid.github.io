@@ -87,6 +87,95 @@
         });
     };
 
+    const formatDateLabel = (value) => {
+        if (!value) return "";
+        const ts = parseDateValue(value);
+        if (!ts) return String(value);
+        return new Intl.DateTimeFormat(undefined, {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        }).format(new Date(ts));
+    };
+
+    const humanizeKey = (value) => {
+        return String(value || "")
+            .replace(/[_-]+/g, " ")
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
+            .replace(/\b\w/g, (match) => match.toUpperCase());
+    };
+
+    const MISC_DEFAULT_IMAGES = {
+        Reading: "../resources/img/misc/reading.svg",
+        Watching: "../resources/img/misc/watching.svg",
+        Listening: "../resources/img/misc/listening.svg",
+        Gaming: "../resources/img/misc/gaming.svg",
+        Exploring: "../resources/img/misc/exploring.svg",
+    };
+
+    const countryCodeToFlag = (code) => {
+        if (!code || code.length !== 2) return '';
+        const upper = code.toUpperCase();
+        return [...upper].map(c => String.fromCodePoint(0x1F1E6 - 65 + c.charCodeAt(0))).join('');
+    };
+
+    const normalizeMiscellaneous = (items) => {
+        return [...items]
+            .map((item, idx) => {
+                const tags = Array.isArray(item.tags) ? item.tags : [];
+                const metadata = item.metadata && typeof item.metadata === 'object' && !Array.isArray(item.metadata)
+                    ? item.metadata
+                    : {};
+                const id = item.id ?? idx + 1;
+                const isExploring = item.category === 'Exploring';
+                const placeName = metadata.place || item.place || item.title || '';
+                const title = isExploring
+                    ? (placeName || metadata.location || 'Exploring')
+                    : (item.title || (item.category === 'Reflections' ? `Reflection ${idx + 1}` : item.category));
+                const imageUrl = item.imageUrl || MISC_DEFAULT_IMAGES[item.category] || '';
+
+                const countryFlag = countryCodeToFlag(metadata.countryCode || '');
+                const geotag = metadata.geotag || '';
+                const location = metadata.location || '';
+                const mapQuery = geotag || location;
+                const mapUrl = mapQuery
+                    ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`
+                    : '';
+
+                const additionalMetadata = metadata.additional && typeof metadata.additional === 'object' && !Array.isArray(metadata.additional)
+                    ? metadata.additional
+                    : {};
+
+                const baseMetadataSummary = Object.entries(metadata)
+                    .filter(([k, value]) => !['countryCode', 'geotag', 'location', 'place', 'additional'].includes(k) && value !== undefined && value !== null && value !== "")
+                    .map(([k, v]) => `${humanizeKey(k)}: ${v}`);
+
+                const additionalSummary = Object.entries(additionalMetadata)
+                    .filter(([, value]) => value !== undefined && value !== null && value !== "")
+                    .map(([k, v]) => `${humanizeKey(k)}: ${v}`);
+
+                const metadataSummary = [...baseMetadataSummary, ...additionalSummary].join(" • ");
+
+                return {
+                    ...item,
+                    id,
+                    title,
+                    imageUrl,
+                    countryFlag,
+                    mapUrl,
+                    location,
+                    location_label: location,
+                    geotag,
+                    type: item.type || item.category,
+                    tags_summary: tags.join(" • "),
+                    tags_key: tags.map((tag) => String(tag).toLowerCase()).join("|"),
+                    metadata_summary: metadataSummary,
+                    display_date: formatDateLabel(item.date || item.createdAt),
+                };
+            })
+            .sort((a, b) => parseDateValue(b.date || b.createdAt) - parseDateValue(a.date || a.createdAt));
+    };
+
     // Walk any node type: TEXT, ELEMENT, or DOCUMENT_FRAGMENT
     const walkNodes = (node, replaceFn) => {
         if (node.nodeType === Node.TEXT_NODE) {
@@ -118,6 +207,7 @@
             if (key === "blogs") items = normalizeBlogs(sourceItems);
             if (key === "news") items = normalizeNews(sourceItems);
             if (key === "projects") items = normalizeProjects(sourceItems);
+            if (key === "miscellaneous") items = normalizeMiscellaneous(sourceItems);
 
             items.forEach(item => {
                 const clone = tmpl.content.cloneNode(true); // DocumentFragment
@@ -231,6 +321,117 @@
                 linkEl.setAttribute('href', viewerHref);
                 linkEl.setAttribute('target', '_self');
                 linkEl.removeAttribute('rel');
+            }
+        });
+
+        document.querySelectorAll('.misc-list .misc-item').forEach((itemEl) => {
+            const category = (itemEl.dataset.category || '').trim();
+            const tagsEl = itemEl.querySelector('.misc-tags');
+            const metaEl = itemEl.querySelector('.misc-meta');
+            const placeEl = itemEl.querySelector('.misc-place');
+            const linkEl = itemEl.querySelector('.misc-link');
+            const mediaEl = itemEl.querySelector('.misc-media');
+            const imageEl = itemEl.querySelector('.misc-image');
+
+            if (tagsEl) {
+                if (category !== 'Reflections') {
+                    tagsEl.style.display = 'none';
+                } else {
+                    const raw = tagsEl.textContent.trim();
+                    if (raw) {
+                        const parts = raw
+                            .split('•')
+                            .map((tag) => tag.trim())
+                            .filter(Boolean);
+
+                        tagsEl.textContent = '';
+                        parts.forEach((tag) => {
+                            const tagKey = String(tag).toLowerCase().replace(/[^a-z0-9]/g, '');
+                            const badge = document.createElement('span');
+                            badge.className = 'misc-tag-badge';
+                            badge.dataset.tagKey = tagKey;
+                            if (tagKey) badge.classList.add(`tag-${tagKey}`);
+                            badge.textContent = tag;
+                            tagsEl.appendChild(badge);
+                        });
+                    }
+                }
+            }
+
+            if (mediaEl && imageEl) {
+                const src = (imageEl.getAttribute('src') || '').trim();
+                if (!src) {
+                    mediaEl.classList.add('is-empty');
+                    imageEl.removeAttribute('src');
+                } else {
+                    imageEl.addEventListener('error', () => {
+                        mediaEl.classList.add('is-empty');
+                    }, { once: true });
+                }
+            }
+
+            if (tagsEl && !tagsEl.textContent.trim()) tagsEl.style.display = 'none';
+            if (metaEl && !metaEl.textContent.trim()) metaEl.style.display = 'none';
+            if (placeEl && !placeEl.textContent.trim()) placeEl.style.display = 'none';
+
+            if (category === 'Exploring' && metaEl) {
+                const rawMeta = metaEl.textContent.trim();
+                if (rawMeta) {
+                    const parts = rawMeta
+                        .split('•')
+                        .map((s) => s.trim())
+                        .filter(Boolean);
+
+                    if (parts.length > 0) {
+                        metaEl.textContent = '';
+                        parts.forEach((part) => {
+                            const chip = document.createElement('span');
+                            chip.className = 'misc-meta-pill';
+                            chip.textContent = part;
+                            metaEl.appendChild(chip);
+                        });
+                    }
+                }
+            }
+
+            if (linkEl) {
+                const href = (linkEl.getAttribute('href') || '').trim();
+                if (!href) linkEl.style.display = 'none';
+            }
+
+            // Exploring: inject flag + geo footer
+            if (category === 'Exploring') {
+                const overlay = itemEl.querySelector('.misc-overlay');
+                const flag = (itemEl.dataset.flag || '').trim();
+                const geotag = (itemEl.dataset.geotag || '').trim();
+                const map = (itemEl.dataset.mapUrl || '').trim();
+
+                if (overlay && (flag || map)) {
+                    const footer = document.createElement('div');
+                    footer.className = 'misc-explore-footer';
+
+                    if (flag) {
+                        const flagSpan = document.createElement('span');
+                        flagSpan.className = 'misc-explore-flag';
+                        flagSpan.textContent = flag;
+                        footer.appendChild(flagSpan);
+                    }
+
+                    if (map) {
+                        const mapLink = document.createElement('a');
+                        mapLink.className = 'misc-explore-map';
+                        mapLink.href = map;
+                        mapLink.target = '_blank';
+                        mapLink.rel = 'noopener noreferrer';
+                        mapLink.setAttribute('aria-label', geotag ? `Open ${geotag} in Google Maps` : 'Open location in Google Maps');
+                        if (geotag) mapLink.title = geotag;
+                        mapLink.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+                        footer.appendChild(mapLink);
+                    }
+
+                    // Append directly to card (not inside overlay) so it's always visible
+                    itemEl.appendChild(footer);
+                }
             }
         });
     });

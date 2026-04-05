@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#1a0533"/>
+  <rect width="800" height="500" fill="url(#lg)"/>
+  <defs>
+    <radialGradient id="lg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#1a0533" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Headphones band -->
+  <path d="M260 250 Q260 140 400 140 Q540 140 540 250" stroke="#a78bfa" stroke-width="18" fill="none" stroke-linecap="round"/>
+  <!-- Left ear cup -->
+  <rect x="225" y="235" width="58" height="88" rx="28" fill="#5b21b6" stroke="#a78bfa" stroke-width="2.5"/>
+  <!-- Right ear cup -->
+  <rect x="517" y="235" width="58" height="88" rx="28" fill="#5b21b6" stroke="#a78bfa" stroke-width="2.5"/>
+  <!-- Left inner -->
+  <rect x="238" y="249" width="32" height="58" rx="16" fill="#7c3aed" opacity="0.7"/>
+  <!-- Right inner -->
+  <rect x="530" y="249" width="32" height="58" rx="16" fill="#7c3aed" opacity="0.7"/>
+  <!-- Sound waves left -->
+  <path d="M196 258 Q182 278 196 298" stroke="#c4b5fd" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M176 244 Q152 278 176 312" stroke="#c4b5fd" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.45"/>
+  <!-- Sound waves right -->
+  <path d="M604 258 Q618 278 604 298" stroke="#c4b5fd" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+  <path d="M624 244 Q648 278 624 312" stroke="#c4b5fd" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.45"/>
+</svg>

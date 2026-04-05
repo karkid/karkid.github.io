@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#0c1a2e"/>
+  <rect width="800" height="500" fill="url(#wg)"/>
+  <defs>
+    <radialGradient id="wg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0369a1" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0c1a2e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Screen -->
+  <rect x="220" y="130" width="360" height="210" rx="14" fill="#0f2744" stroke="#38bdf8" stroke-width="2.5"/>
+  <!-- Screen shine -->
+  <rect x="232" y="142" width="336" height="186" rx="8" fill="#0c2035" opacity="0.7"/>
+  <!-- Stand neck -->
+  <rect x="375" y="340" width="50" height="28" rx="4" fill="#164e63"/>
+  <!-- Stand base -->
+  <rect x="310" y="368" width="180" height="16" rx="8" fill="#164e63" stroke="#38bdf8" stroke-width="1.5"/>
+  <!-- Play triangle -->
+  <polygon points="355,175 355,285 465,230" fill="#38bdf8" opacity="0.9"/>
+  <!-- Glow behind play -->
+  <circle cx="405" cy="230" r="52" fill="#0ea5e9" opacity="0.12"/>
+</svg>
