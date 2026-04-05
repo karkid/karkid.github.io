@@ -1,0 +1,83 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "site-data/publications",
+    "title": "Site Publications",
+    "description": "window.SITE_DATA_PUBLICATIONS",
+    "type": "object",
+    "required": [
+        "publications_intro",
+        "publications"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "publications_intro": {
+            "type": "string",
+            "minLength": 1
+        },
+        "publications": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "key",
+                    "author",
+                    "title",
+                    "year",
+                    "type"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                    "key": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "author": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "title": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "booktitle": {
+                        "type": "string"
+                    },
+                    "journal": {
+                        "type": "string"
+                    },
+                    "year": {
+                        "type": "string",
+                        "pattern": "^[0-9]{4}$"
+                    },
+                    "publisher": {
+                        "type": "string"
+                    },
+                    "volume": {
+                        "type": "string"
+                    },
+                    "number": {
+                        "type": "string"
+                    },
+                    "pages": {
+                        "type": "string"
+                    },
+                    "doi": {
+                        "type": "string"
+                    },
+                    "link": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "article",
+                            "inproceedings",
+                            "book",
+                            "misc"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

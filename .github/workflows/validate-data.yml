@@ -1,0 +1,46 @@
+name: Validate site data
+
+# Runs on every push to main AND on every pull request.
+# If any data file fails schema validation, the workflow fails
+# (red ✗ on GitHub) before GitHub Pages can deploy.
+#
+# To make this a hard gate on GitHub Pages deployment:
+#   1. Go to Settings → Branches → Add rule for "main"
+#   2. Enable "Require status checks to pass before merging"
+#   3. Add "validate / validate-data" to the required checks list
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'resources/js/site-data/**'
+      - 'resources/js/site-config.js'
+      - 'scripts/validate-data.js'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/validate-data.yml'
+  pull_request:
+    paths:
+      - 'resources/js/site-data/**'
+      - 'scripts/validate-data.js'
+
+jobs:
+  validate-data:
+    name: Validate site data
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run schema validation
+        run: npm run validate

@@ -15,4 +15,21 @@
     "editor.renderWhitespace": "all",
     // Only if you want auto fomattting on saving the file
     "editor.formatOnSave": true,
+    // ── JS type checking ──────────────────────────────────────────────────────
+    // site-data/*.js files have "// @ts-check" at the top, which makes VS Code
+    // validate them against the interfaces in resources/js/site-data/types.d.ts.
+    // This gives inline red squiggles for wrong enum values, missing required
+    // fields, wrong types, and unknown property names.
+    "javascript.validate.enable": true,
+    // ── JSON Schema associations ──────────────────────────────────────────────
+    // Attach the draft-07 meta-schema to our own schema files so VS Code
+    // validates the schemas themselves and provides autocomplete while editing them.
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "resources/js/site-data/schema/*.schema.json"
+            ],
+            "url": "http://json-schema.org/draft-07/schema#"
+        }
+    ]
 }

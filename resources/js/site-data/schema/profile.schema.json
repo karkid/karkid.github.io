@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "site-data/profile",
+    "title": "Site Profile",
+    "description": "window.SITE_DATA_PROFILE — scalar values used across all pages",
+    "type": "object",
+    "required": [
+        "Name",
+        "Current_Role",
+        "LinkedIn_URL",
+        "GitHub_URL",
+        "CV_URL",
+        "Email",
+        "Year"
+    ],
+    "additionalProperties": false,
+    "properties": {
+        "Name": {
+            "type": "string",
+            "minLength": 1
+        },
+        "Current_Role": {
+            "type": "string",
+            "minLength": 1
+        },
+        "Affiliation": {
+            "type": "string"
+        },
+        "About_Intro": {
+            "type": "string"
+        },
+        "About_Background": {
+            "type": "string"
+        },
+        "About_Collaboration": {
+            "type": "string"
+        },
+        "Current_Position_Detail": {
+            "type": "string"
+        },
+        "Academic_Direction": {
+            "type": "string"
+        },
+        "Near_Term_Goal": {
+            "type": "string"
+        },
+        "LinkedIn_URL": {
+            "type": "string",
+            "format": "uri"
+        },
+        "GitHub_URL": {
+            "type": "string",
+            "format": "uri"
+        },
+        "CV_URL": {
+            "type": "string",
+            "minLength": 1
+        },
+        "Email": {
+            "type": "string",
+            "format": "email"
+        },
+        "Year": {
+            "type": "string",
+            "pattern": "^[0-9]{4}$"
+        },
+        "default_theme": {
+            "type": "string",
+            "enum": [
+                "light",
+                "dark"
+            ]
+        }
+    }
+}

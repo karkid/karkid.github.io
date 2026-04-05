@@ -23,7 +23,12 @@
             : "light";
     };
 
-    document.addEventListener("DOMContentLoaded", () => {
+    // Works whether this script is loaded statically or dynamically via site-bootstrap.js.
+    var _domReady = function (fn) {
+        if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn); }
+        else { fn(); }
+    };
+    _domReady(() => {
         applyTheme(getInitialTheme());
 
         const btn = document.querySelector(".theme-toggle");
