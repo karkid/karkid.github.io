@@ -264,9 +264,9 @@ Instead of learning values (Q(a)), we learn **preferences** (H(a)).
 
 ### Softmax Policy
 
-$
+$$
 \pi(a) = \frac{e^{H(a)}}{\sum_b e^{H(b)}}
-$
+$$
 
 ---
 
