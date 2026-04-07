@@ -97,9 +97,9 @@ An RL system consists of:
 
 * **Agent** — the decision-maker
 * **Environment** — everything the agent interacts with
-* **State** $ S_t $ — current situation
-* **Action** $ A_t $ — agent’s choice
-* **Reward** $ R_{t+1} $ — feedback
+* **State** $S_t$ — current situation
+* **Action** $A_t$ — agent’s choice
+* **Reward** $R_{t+1}$ — feedback
 
 ---
 
@@ -152,8 +152,8 @@ $$
 
 Where:
 
-* $ G_t $: return
-* $ \gamma \in [0,1] $: **discount factor**
+* $G_t$: return
+* $\gamma \in [0,1]$: **discount factor**
 
 ---
 
@@ -161,8 +161,8 @@ Where:
 
 > **Future rewards matter less than immediate rewards.**
 
-* $ \gamma = 0 $ → only immediate reward matters
-* $ \gamma \approx 1 $ → long-term rewards matter
+* $\gamma = 0$ → only immediate reward matters
+* $\gamma \approx 1$ → long-term rewards matter
 
 Think of it as:
 
