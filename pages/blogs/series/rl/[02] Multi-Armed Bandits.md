@@ -282,16 +282,21 @@ $$
 ### Preference Update
 
 Selected action:
+$$
+H_{t+1}​(At​) = H_t​(At​)+ α(R_t​ − \bar R_t​)(1−π_t​(A_t​))
+$$
 
-$$
-H(a) \uparrow \quad \text{if reward is better than average}
-$$
+$H(a) \uparrow \quad \text{if reward is better than average}$
 
 Non-selected actions:
 
 $$
-H(a) \downarrow
+H_{t+1}​(a)=H_t​(a)− α(R_t​ − \bar R_t​) π_t​(a)
 $$
+
+$H(a) \downarrow$
+
+where $\bar 𝑅_t$ is a baseline, often average reward.
 
 ---
 
