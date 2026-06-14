@@ -1,14 +1,14 @@
 // @ts-check
 window.SITE_DATA_JOURNEY = {
-    journey_intro: "Here is my journey so far, which yet not ended. I am still learning and exploring new things.",
+    journey_intro: "Here is my journey so far — still being written.",
     journey: [
         {
-            year: "2025-",
+            year: "2026-",
             icon: "ion-ios-cog",
             location: "At University of Bristol, UK",
-            event: "Planning an MS in Robotics, focusing on reinforcement learning and graph machine learning for robotics applications and transitioning into research.",
-            outcome: "Not yet started",
-            reward: "Not yet achieved"
+            event: "Starting the MS in Robotics programme at the University of Bristol in September 2026, focusing on reinforcement learning and graph machine learning for robotics applications.",
+            outcome: "Transitioning from industry into research, with the goal of producing research-grade outputs in RL and decision systems for robotics.",
+            reward: "Looking forward to the journey."
         },
         {
             year: "2016-2018",
@@ -23,7 +23,7 @@ window.SITE_DATA_JOURNEY = {
             icon: "ion-ios-briefcase",
             location: "At Corporate, India",
             event: "Pursued my dream of working in the industry, starting as a software developer and progressing to a staff role.",
-            outcome: "This experience provided me with the technical knowledge and critical thinking abilities that have been essential in my career development.",
+            outcome: "Spent over a decade building expertise in CAD systems, computational geometry, and high-performance algorithms — progressing from a junior developer to Staff Software Developer, shipping products used by real customers and growing engineering teams.",
             reward: "Achieved significant milestones in my career, contributing to successful projects and team growth."
         },
         {

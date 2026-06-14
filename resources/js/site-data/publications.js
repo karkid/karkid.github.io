@@ -1,6 +1,6 @@
 // @ts-check
 window.SITE_DATA_PUBLICATIONS = {
-    publications_intro: "Here are some of my recent publications, which reflect my research interests in explainable AI, knowledge graphs, and fact checking. I am always open to discussing research ideas and potential collaborations, so feel free to reach out if you want to discuss any of these publications or related topics.",
+    publications_intro: "My research focuses on explainable AI, knowledge graphs, and fact verification. Publications will appear here as they are accepted.",
     publications: [
         // {
         //     key: "kumar2026epistemic",

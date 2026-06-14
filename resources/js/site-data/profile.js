@@ -11,6 +11,7 @@ window.SITE_DATA_PROFILE = {
     Near_Term_Goal: "research-grade project outputs, writing, and collaboration",
     LinkedIn_URL: "https://www.linkedin.com/in/dheeraj-karki-982b2756",
     GitHub_URL: "https://github.com/karkid",
+    ORCID_URL: "https://orcid.org/0009-0008-7095-894X",
     CV_URL: "../Profile.pdf",
     Email: "dheerajkarki1790@gmail.com",
     Year: "2026",

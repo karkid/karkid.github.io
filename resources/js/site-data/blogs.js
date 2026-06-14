@@ -1,7 +1,55 @@
 // @ts-check
 window.SITE_DATA_BLOGS = {
-    blogs_intro: "Here are some of my recent talks, session presentations, and blog posts, which reflect my interests in machine learning, AI research, and software development. I enjoy sharing my insights and experiences through writing and speaking, and I hope these posts provide value to others in the field. If you have any questions or want to discuss any of these topics further, please feel free to reach out.",
+    blogs_intro: "Slides and sessions from talks I've given at Arden Software, Gräbert GmbH, and community events — plus written deep-dives from the RL series.",
     blogs: [
+        {
+            title: "Finite Markov Decision Processes",
+            summary: "Chapter 3 of the RL series: where RL becomes a true framework for sequential decision-making. Covers states, state transitions, the Markov property, returns, value functions, and the Bellman equations.",
+            link: "blog-viewer.html?file=../pages/blogs/series/rl/%5B03%5D%20Finite%20Markov%20Decision%20Process.md&title=Finite%20Markov%20Decision%20Processes&author=Dheeraj%20Karki&event=RL%20Series",
+            date: "June 1, 2026",
+            tags: ["Reinforcement Learning", "MDP", "Series"],
+            timeToRead: "30 min read",
+            featured: true,
+            author: "Dheeraj Karki",
+            status: "Published",
+            type: "blog",
+            file_type: "md",
+            event: "RL Series",
+            mode: "Online",
+            location: "karkid.github.io"
+        },
+        {
+            title: "Multi-Armed Bandits",
+            summary: "Chapter 2 of the RL series: the exploration–exploitation tradeoff in its purest form. Covers action-value estimation, epsilon-greedy, UCB, and gradient bandit algorithms.",
+            link: "blog-viewer.html?file=../pages/blogs/series/rl/%5B02%5D%20Multi-Armed%20Bandits.md&title=Multi-Armed%20Bandits&author=Dheeraj%20Karki&event=RL%20Series",
+            date: "May 20, 2026",
+            tags: ["Reinforcement Learning", "Bandits", "Series"],
+            timeToRead: "40 min read",
+            featured: true,
+            author: "Dheeraj Karki",
+            status: "Published",
+            type: "blog",
+            file_type: "md",
+            event: "RL Series",
+            mode: "Online",
+            location: "karkid.github.io"
+        },
+        {
+            title: "What Reinforcement Learning Really Is",
+            summary: "Chapter 1 of the RL series: why RL differs from supervised learning, the agent–environment interface, rewards, returns, value functions, and the Bellman equation from first principles.",
+            link: "blog-viewer.html?file=../pages/blogs/series/rl/%5B01%5D%20What%20Reinforcement%20Learning%20Is.md&title=What%20Reinforcement%20Learning%20Really%20Is&author=Dheeraj%20Karki&event=RL%20Series",
+            date: "May 10, 2026",
+            tags: ["Reinforcement Learning", "ML", "Series"],
+            timeToRead: "28 min read",
+            featured: true,
+            author: "Dheeraj Karki",
+            status: "Published",
+            type: "blog",
+            file_type: "md",
+            event: "RL Series",
+            mode: "Online",
+            location: "karkid.github.io"
+        },
         {
             title: "SOLID",
             summary: "Session slides on SOLID principles for maintainable object-oriented design.",

@@ -86,7 +86,8 @@
                             "ppt",
                             "doc",
                             "docx",
-                            "url"
+                            "url",
+                            "md"
                         ]
                     },
                     "mode": {

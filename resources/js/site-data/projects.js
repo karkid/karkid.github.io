@@ -4,17 +4,17 @@ window.SITE_DATA_PROJECTS = {
     projects: [
         {
             title: "Epistemic FactKG",
-            description: "A knowledge graph generation and claim validation framework for epistemic fact checking. This project processes structured data from AI2-THOR simulations and AVERITEC datasets to build RDF knowledge graphs and generate verifiable claims with epistemic labels.",
+            description: "A trust-isolating fact-verification benchmark exposing a critical flaw in existing datasets: evidence text is byte-identical across high- and low-trust sources, so only the source-trust scalar determines the verdict. A trust-blind model collapses to chance (macro-F1 0.39) while a trust-aware heterogeneous GNN achieves 0.92 ± 0.02 on 2,200 records.",
             link: "https://github.com/karkid/epistemic-factkg",
-            Repo: "Private",
+            Repo: "Public",
             owner: "Dheeraj Karki",
             status: "In Progress",
             timeline: "February 2026 - Ongoing",
-            technology: "Python",
-            domain: "Explainable AI, Knowledge Graphs, Fact Checking",
+            technology: "Python, PyTorch, DGL, Heterogeneous GNN",
+            domain: "Benchmark Design, Explainable AI, Knowledge Graphs, NLP",
             tags: ["Research", "Git"],
             pinned: true,
-            purpose: "Working on the Research draft to validate the affect of the epistemic lables on the claim validation process. The goal is to contribute to the field of Explainable AI using GNNs, so the machine learning models can provide more transparent and interpretable outputs, especially in the context of fact checking and knowledge graph generation."
+            purpose: "Existing fact-verification benchmarks leak verdicts through writing register — a trust-blind model scores 99.6% accuracy by reading text style alone, never touching source identity. This benchmark isolates source trust as the sole signal. Key finding: even with access to the trust scalar, a linear model scores only 0.20 on mid-tier boundary cases, showing that fact-checking models need to reason over trust continuously rather than learn a simple high/low threshold."
         },
         {
             title: "ReML — Rebuilding Machine Learning from Scratch",
@@ -28,7 +28,7 @@ window.SITE_DATA_PROJECTS = {
             tags: ["Exploration", "Git"],
             domain: "Machine Learning, Deep Learning, Library Development",
             pinned: true,
-            purpose: "I started this project to gain a deeper understanding of how machine learning libraries like PyTorch and TensorFlow work under the hood. By rebuilding their components from scratch, I aim to learn about the underlying algorithms, data structures, and design patterns that make these libraries efficient and powerful. This project is a great way for me to solidify my knowledge of machine learning concepts and improve my programming skills."
+            purpose: "Rebuilding PyTorch and TensorFlow components from scratch to develop a deep understanding of the algorithms, data structures, and design patterns that make ML libraries efficient."
         },
         {
             title: "PDDL Planner",
@@ -42,7 +42,7 @@ window.SITE_DATA_PROJECTS = {
             domain: "Automated Planning, AI Planning",
             tags: ["Exploration", "Git"],
             pinned: true,
-            purpose: "I created this project to explore automated planning and AI planning techniques using the Planning Domain Definition Language (PDDL). It was a fun project to work on and I learned a lot about planning algorithms and how to represent planning problems using PDDL."
+            purpose: "Built to explore automated planning techniques and domain modeling using PDDL as part of my AI coursework."
         },
         {
             title: "CAD in Cloud",
@@ -51,12 +51,12 @@ window.SITE_DATA_PROJECTS = {
             status: "Completed",
             Repo: "Public",
             owner: "Dheeraj Karki",
-            timeline: "July 2018 - September 2026",
+            timeline: "July 2018 - January 2019",
             technology: "C++",
             domain: "CAD, Cloud Computing",
             tags: ["Research", "Git"],
             pinned: false,
-            purpose: "Build for the Master thesis project, the idea was to implement a CAD rendering engine on cloud to support and achieve the functionality of 'Anyplace, Anywhere and Anytime'. We use DXF drawing for this project. It was a great learning experience for me and I enjoyed building it."
+            purpose: "Master's thesis project: a cloud-hosted CAD rendering engine for DXF drawings, enabling access from any device, anywhere."
         },
         {
             title: "Shape War",
@@ -70,11 +70,11 @@ window.SITE_DATA_PROJECTS = {
             domain: "Game Development, C++ Programming",
             tags: ["Exploration", "Git"],
             pinned: false,
-            purpose: "I wanted to learn about Entity Component System (ECS) architecture and I thought building a simple game would be a fun way to do that. Shape War is a simple game where players control a shape and try to defeat other shapes by shooting them. It was a great learning experience for me and I enjoyed building it."
+            purpose: "Built to learn Entity Component System (ECS) architecture through a concrete game project."
         },
         {
-            title: "Air BNB exploratory analysis",
-            description: "Exploratory data analysis of Air BNB listings in London, UK, using Python and Jupyter Notebook.",
+            title: "Airbnb Exploratory Analysis",
+            description: "Exploratory data analysis of Airbnb listings in London, UK, using Python and Jupyter Notebook.",
             link: "https://github.com/karkid/exploratory-analysis/",
             status: "Completed",
             Repo: "Public",
@@ -84,7 +84,7 @@ window.SITE_DATA_PROJECTS = {
             domain: "Data Analysis, Machine Learning",
             tags: ["Exploration", "Git"],
             pinned: false,
-            purpose: "Learning ML through exploratory data analysis of Air BNB listings in London, UK, using Python and Jupyter Notebook."
+            purpose: "Learning ML fundamentals through exploratory data analysis on real-world Airbnb listings data."
         },
         {
             title: "Frido",
@@ -98,7 +98,7 @@ window.SITE_DATA_PROJECTS = {
             domain: "Web Development, Productivity Tools",
             tags: ["Volunteer", "Startup", "Git"],
             pinned: false,
-            purpose: "Frido is volunteer project that Madsen and I started in 2019. We wanted to create a simple and intuitive todo app that would help people stay organized and productive. We built it using React for the frontend and Firebase for the backend, and we have been continuously improving it based on user feedback. Frido has been a great learning experience for us and we are proud of the product we have created."
+            purpose: "Co-founded with Madsen in 2019 as a volunteer project to build a clean, intuitive todo app. I contributed to the product until February 2026; the project continues independently."
         },
         {
             title: "Carbon",
@@ -112,11 +112,11 @@ window.SITE_DATA_PROJECTS = {
             domain: "Graphics Programming, Rendering Engines",
             tags: ["Exploration", "Git"],
             pinned: false,
-            purpose: "I had a great interest in learning how rendering engines work and I wanted to build one from scratch. It was a fun project to work on and I learned a lot about graphics programming and OpenGL."
+            purpose: "Built to learn graphics programming and OpenGL internals from the ground up."
         },
         {
             title: "Tic-Tac-Toe",
-            description: "Tic-Tac-Toe is board gamefor two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.",
+            description: "Tic-Tac-Toe is board game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.",
             technology: "C++",
             link: "https://github.com/karkid/Tic-Tac-Toe",
             timeline: "December 2018 - December 2018",
@@ -126,7 +126,7 @@ window.SITE_DATA_PROJECTS = {
             tags: ["Exploration", "Git"],
             pinned: false,
             domain: "Game Development, C++ Programming",
-            purpose: "I had created similar project in my first year of bachelor degree in C. I got chance to recreate it for an interview process in C++. It was a fun project to work and I remember it as Hello World of C++ for me."
+            purpose: "Recreated a C project from my bachelor's degree in C++ as part of an interview process — my equivalent of a C++ 'Hello World'."
         },
         {
             title: "Lens 2D Render Engine",
@@ -141,7 +141,7 @@ window.SITE_DATA_PROJECTS = {
             tags: ["Research", "Office"],
             pinned: true,
             owner: "Arden Software",
-            purpose: "Enhancing the 2D rendering engine to improve performance and visual quality for internal projects."
+            purpose: "Redesigned the 2D rendering pipeline at Arden Software to improve performance and visual quality for CAD workflows."
         },
         {
             title: "Cimex Importer",
@@ -156,11 +156,11 @@ window.SITE_DATA_PROJECTS = {
             tags: ["Research", "Office"],
             pinned: true,
             owner: "Arden Software",
-            purpose: "Reverse engineering the Cimex CAD format to build an importer that can handle geometry, metadata, and integrate with existing CAD systems. This project is important for improving interoperability and data exchange in CAD workflows."
+            purpose: "Reverse-engineered the Cimex CAD format to build an importer that handles geometry, metadata, and integrates with existing CAD systems."
         },
         {
             title: "Viewport React Component",
-            summary: "Presentation on building and structuring viewport-driven UI components.",
+            description: "Designing and implementing a cross-platform viewport component shared between native and web product surfaces.",
             link: "",
             presentation_link: "../resources/docs/talks/ViewportReactComponent.pdf",
             Repo: "Private",
@@ -171,7 +171,7 @@ window.SITE_DATA_PROJECTS = {
             tags: ["Research", "Office"],
             pinned: true,
             owner: "Arden Software",
-            purpose: "Designing a viewport react component which will be same for native and web. The goal is to have a single component that can be used across different platforms, improving code reuse and consistency in the user interface. This project is important for streamlining development and providing a seamless experience for users across native and web applications."
+            purpose: "Designed a single viewport React component for both native and web surfaces to improve code reuse and UI consistency across product workflows."
         }
     ]
 };

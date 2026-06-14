@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | {Name}</title>
+    <script src="../resources/js/site-head.js"></script>
+    <style>
+        .blog-article {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .blog-article h1, .blog-article h2, .blog-article h3,
+        .blog-article h4, .blog-article h5, .blog-article h6 {
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+            line-height: 1.3;
+        }
+        .blog-article h1 { font-size: 2.2rem; margin-top: 0; }
+        .blog-article h2 { font-size: 1.7rem; border-bottom: 1px solid var(--color-line); padding-bottom: 0.3em; }
+        .blog-article h3 { font-size: 1.3rem; }
+        .blog-article p  { margin: 1em 0; line-height: 1.75; }
+        .blog-article ul, .blog-article ol { margin: 1em 0; padding-left: 2em; }
+        .blog-article li { margin: 0.4em 0; line-height: 1.65; }
+        .blog-article blockquote {
+            border-left: 3px solid var(--color-accent);
+            margin: 1.5em 0;
+            padding: 0.5em 1.2em;
+            color: var(--color-text-muted, #6b7280);
+            font-style: italic;
+        }
+        .blog-article code {
+            background: var(--color-surface, #f3f4f6);
+            border-radius: 3px;
+            padding: 0.15em 0.4em;
+            font-size: 0.9em;
+            font-family: monospace;
+        }
+        .blog-article pre {
+            background: var(--color-surface, #f3f4f6);
+            border-radius: 6px;
+            padding: 1em 1.2em;
+            overflow-x: auto;
+            margin: 1.5em 0;
+        }
+        .blog-article pre code { background: none; padding: 0; font-size: 0.88em; }
+        .blog-article hr { border: none; border-top: 1px solid var(--color-line); margin: 2em 0; }
+        .blog-article table { border-collapse: collapse; width: 100%; margin: 1.5em 0; }
+        .blog-article th, .blog-article td { border: 1px solid var(--color-line); padding: 0.5em 0.8em; text-align: left; }
+        .blog-article th { background: var(--color-surface, #f3f4f6); font-weight: 600; }
+        .blog-viewer-error { color: var(--color-text-muted, #6b7280); padding: 2em 0; }
+        .blog-back-link { display: inline-block; margin-bottom: 1.5em; font-size: 0.9rem; }
+    </style>
+</head>
+
+<body data-active-nav="blogs">
+    <div id="site-header"></div>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <h1 id="blogTitle">Loading…</h1>
+                <p class="page-intro" id="blogMeta"></p>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="container">
+                <a href="blogs.html" class="item-link blog-back-link">← Back to Talks &amp; Blogs</a>
+                <article class="blog-article" id="blogContent" aria-live="polite">
+                    <p class="blog-viewer-error">Loading content…</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <div id="site-quick-contact"></div>
+    <div id="site-footer"></div>
+
+    <script src="../resources/js/site-bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            // URLSearchParams.get() already percent-decodes the value once — do not decode again.
+            const file = params.get("file") || "";
+            const titleParam = params.get("title") || "";
+            const author = params.get("author") || "";
+            const date = params.get("date") || "";
+            const event = params.get("event") || "";
+
+            const titleEl = document.getElementById("blogTitle");
+            const metaEl = document.getElementById("blogMeta");
+            const contentEl = document.getElementById("blogContent");
+
+            const isAllowed = file.startsWith("../pages/blogs/series/");
+
+            if (!file || !isAllowed) {
+                titleEl.textContent = "Post not found";
+                contentEl.innerHTML = "<p class=\"blog-viewer-error\">Invalid or missing post link.</p>";
+                return;
+            }
+
+            if (titleParam) titleEl.textContent = titleParam;
+
+            const metaParts = [date, event, author ? "By " + author : ""].filter(Boolean);
+            if (metaParts.length) metaEl.textContent = metaParts.join(" · ");
+
+            // Resolve relative path and let the URL constructor encode special chars (brackets, spaces).
+            const fetchUrl = new URL(file, window.location.href).href;
+
+            fetch(fetchUrl)
+                .then(function (res) {
+                    if (!res.ok) throw new Error("HTTP " + res.status);
+                    return res.text();
+                })
+                .then(function (md) {
+                    if (!titleParam) {
+                        const firstH1 = md.match(/^#\s+(.+)/m);
+                        if (firstH1) titleEl.textContent = firstH1[1].replace(/\*/g, "");
+                    }
+                    if (window.marked) {
+                        contentEl.innerHTML = window.marked.parse(md);
+                    } else {
+                        contentEl.innerHTML = "<pre>" + md.replace(/</g, "&lt;") + "</pre>";
+                    }
+                })
+                .catch(function () {
+                    contentEl.innerHTML = "<p class=\"blog-viewer-error\">Could not load post. The file may have moved or be unavailable.</p>";
+                });
+        })();
+    </script>
+</body>
+
+</html>
