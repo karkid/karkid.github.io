@@ -158,10 +158,6 @@ body[data-theme="dark"] .hero {
     align-items: center;
 }
 
-.hero-copy p {
-    text-align: justify;
-}
-
 .hero-photo-wrap {
     text-align: right;
 }

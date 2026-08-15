@@ -37,10 +37,16 @@
 
     function load(index) {
         if (index >= scripts.length) {
-            // All shared scripts have loaded and executed (including template-bind.js
-            // which renders the list items). Signal page-specific scripts that the
-            // page is fully ready — they listen on 'site:ready' instead of
-            // DOMContentLoaded so they can safely query rendered DOM items.
+            // All shared scripts have loaded and executed (including template-bind.js,
+            // which resolves {Token} text, and theme-toggle.js, which applies the
+            // dark/light attribute). Only now is it safe to reveal the body — doing
+            // it any earlier (e.g. right after site-shell.js) would flash unresolved
+            // template text and/or the wrong theme before these scripts finish.
+            document.body.style.opacity = '1';
+
+            // Signal page-specific scripts that the page is fully ready — they
+            // listen on 'site:ready' instead of DOMContentLoaded so they can
+            // safely query rendered DOM items.
             document.dispatchEvent(new CustomEvent('site:ready'));
             return;
         }

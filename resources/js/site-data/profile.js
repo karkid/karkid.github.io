@@ -12,7 +12,7 @@ window.SITE_DATA_PROFILE = {
     LinkedIn_URL: "https://www.linkedin.com/in/dheeraj-karki-982b2756",
     GitHub_URL: "https://github.com/karkid",
     ORCID_URL: "https://orcid.org/0009-0008-7095-894X",
-    CV_URL: "../Profile.pdf",
+    CV_URL: "../resources/docs/cv_dheeraj_karki.pdf",
     Email: "dheerajkarki1790@gmail.com",
     Year: "2026",
     default_theme: "dark"

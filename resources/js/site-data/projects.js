@@ -115,20 +115,6 @@ window.SITE_DATA_PROJECTS = {
             purpose: "Built to learn graphics programming and OpenGL internals from the ground up."
         },
         {
-            title: "Tic-Tac-Toe",
-            description: "Tic-Tac-Toe is board game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row wins the game.",
-            technology: "C++",
-            link: "https://github.com/karkid/Tic-Tac-Toe",
-            timeline: "December 2018 - December 2018",
-            status: "Completed",
-            Repo: "Public",
-            owner: "Dheeraj Karki",
-            tags: ["Exploration", "Git"],
-            pinned: false,
-            domain: "Game Development, C++ Programming",
-            purpose: "Recreated a C project from my bachelor's degree in C++ as part of an interview process — my equivalent of a C++ 'Hello World'."
-        },
-        {
             title: "Lens 2D Render Engine",
             description: "Improving the rendering pipeline and architecture of a 2D engine to enhance performance and visual quality.",
             link: "",

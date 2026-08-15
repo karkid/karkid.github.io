@@ -27,28 +27,12 @@ window.SITE_DATA_JOURNEY = {
             reward: "Achieved significant milestones in my career, contributing to successful projects and team growth."
         },
         {
-            year: "2008-2012",
+            year: "2005-2012",
             icon: "ion-ios-book-outline",
-            location: "At ICFAI University Dehradun, Uttarakhand, India",
-            event: "Pursued a Bachelor's degree in Electronics and Communication Engineering.",
-            outcome: "This education provided me with the technical knowledge and critical thinking abilities that have been essential in my career development.",
-            reward: "Scored 9.42/10 CGPA in my Bachelor's degree, earning a silver medal 🥈 and graduating with honors."
-        },
-        {
-            year: "2005-2008",
-            icon: "ion-ios-bookmarks",
-            location: "At School Uttarakhand, India",
-            event: "Started learning about the world through books, nature, and family stories.",
-            outcome: "This early exposure to knowledge and curiosity laid the foundation for my lifelong passion for learning and discovery.",
-            reward: "Scored 79.6% in Higher Secondary School and 76% in Secondary School with Physics, Chemistry, Biology and Mathematics."
-        },
-        {
-            year: "1991-",
-            icon: "ion-ios-home",
-            location: "At Home Uttarakhand, India",
-            event: "Born and raised in a small town in the foothills of the Himalayas.",
-            outcome: "As a child, I learned moral values from my family and friends. Learning and exploring new things still going on. I am grateful for the opportunities and experiences that have shaped my journey so far, and I look forward to what the future holds.",
-            reward: "Gratitude for the journey and excitement for the future."
+            location: "Uttarakhand, India",
+            event: "Completed secondary and higher secondary schooling, then a Bachelor's degree in Electronics and Communication Engineering at ICFAI University, Dehradun.",
+            outcome: "Built the technical foundation for an engineering career.",
+            reward: "Graduated with a 9.42/10 CGPA and a silver medal 🥈 for academic excellence."
         }
     ]
 };

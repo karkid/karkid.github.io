@@ -25,6 +25,9 @@
         '<link rel="stylesheet" type="text/css" href="' + base + 'resources/css/minimal.css" />\n' +
         // Hide body until site-shell.js has rendered the header/footer, preventing
         // the visible layout pop caused by the empty #site-header div on first paint.
-        '<style>body{opacity:0;transition:opacity 0.15s ease;}</style>'
+        '<style>body{opacity:0;transition:opacity 0.15s ease;}</style>\n' +
+        // If JS never runs, the shared bootstrap script that reveals the body
+        // never fires — without this, the page would stay invisible forever.
+        '<noscript><style>body{opacity:1 !important;}</style></noscript>\n'
     );
 })();
