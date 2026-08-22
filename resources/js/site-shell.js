@@ -8,9 +8,7 @@
         { key: "about", href: "index.html", label: "About" },
         { key: "journey", href: "journey.html", label: "Journey" },
         { key: "projects", href: "projects.html", label: "Projects" },
-        { key: "publications", href: "publications.html", label: "Publications" },
-        { key: "blogs", href: "blogs.html", label: "Talks &amp; Blogs" },
-        { key: "news", href: "news.html", label: "News" },
+        { key: "blogs", href: "blogs.html", label: "Talks &amp; Writing" },
     ];
 
     const buildHeader = (vars, activeNav, brandHidden) => {
