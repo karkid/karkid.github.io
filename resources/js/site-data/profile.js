@@ -9,7 +9,7 @@ window.SITE_DATA_PROFILE = {
     Current_Position_Detail: "Staff Software Developer at Arden Software",
     Academic_Direction: "MS Robotics (University of Bristol), RL, graph ML, perception",
     Near_Term_Goal: "research-grade project outputs, writing, and collaboration",
-    LinkedIn_URL: "https://www.linkedin.com/in/dheeraj-karki-982b2756",
+    LinkedIn_URL: "https://www.linkedin.com/in/dheeraj-karki/",
     GitHub_URL: "https://github.com/karkid",
     ORCID_URL: "https://orcid.org/0009-0008-7095-894X",
     CV_URL: "../resources/docs/cv_dheeraj_karki.pdf",

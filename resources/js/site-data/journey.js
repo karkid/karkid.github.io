@@ -19,7 +19,7 @@ window.SITE_DATA_JOURNEY = {
             reward: "Graduated with a CGPA of 8.6/10, earning accreditation for academic excellence."
         },
         {
-            year: "2013-2025",
+            year: "2013-",
             icon: "ion-ios-briefcase",
             location: "At Corporate, India",
             event: "Pursued my dream of working in the industry, starting as a software developer and progressing to a staff role.",

@@ -17,6 +17,48 @@ window.SITE_DATA_PROJECTS = {
             purpose: "Existing fact-verification benchmarks leak verdicts through writing register — a trust-blind model scores 99.6% accuracy by reading text style alone, never touching source identity. This benchmark isolates source trust as the sole signal. Key finding: even with access to the trust scalar, a linear model scores only 0.20 on mid-tier boundary cases, showing that fact-checking models need to reason over trust continuously rather than learn a simple high/low threshold."
         },
         {
+            title: "robotics-rl-lab",
+            description: "Reinforcement learning built from first principles, applied to robotics — tabular methods, exploration strategies, and the theory behind each, implemented before reaching for a library.",
+            link: "https://github.com/karkid/robotics-rl-lab",
+            status: "In Progress",
+            Repo: "Public",
+            owner: "Dheeraj Karki",
+            timeline: "2026 - Ongoing",
+            technology: "Python, NumPy",
+            domain: "Reinforcement Learning, Robotics",
+            tags: ["Research", "Git"],
+            pinned: true,
+            purpose: "Built ahead of the MSc in Robotics — dynamic programming, Monte Carlo, and TD methods implemented from scratch before reaching for a library. Companion write-ups live in the RL blog series (Talks & Writing)."
+        },
+        {
+            title: "paper-rag",
+            description: "A local, no-API-key retrieval-augmented Q&A tool for PDFs — runs entirely against a local Ollama instance.",
+            link: "https://github.com/karkid/paper-rag",
+            status: "Completed",
+            Repo: "Public",
+            owner: "Dheeraj Karki",
+            timeline: "2026",
+            technology: "Python, Ollama, ChromaDB",
+            domain: "Retrieval-Augmented Generation, LLM Infrastructure",
+            tags: ["Research", "Git"],
+            pinned: true,
+            purpose: "A clean RAG pipeline — PDF chunking, local embeddings, vector retrieval, grounded LLM answers — verified end-to-end against a real research paper before being called done."
+        },
+        {
+            title: "wasm-cad-sketch",
+            description: "A small interactive line-drawing tool — C++ compiled to WebAssembly with Emscripten, rendering to an HTML canvas in the browser.",
+            link: "https://github.com/karkid/wasm-cad-sketch",
+            status: "Completed",
+            Repo: "Public",
+            owner: "Dheeraj Karki",
+            timeline: "2025",
+            technology: "C++, WebAssembly, Emscripten",
+            domain: "Graphics, WebAssembly",
+            tags: ["Exploration", "Git"],
+            pinned: false,
+            purpose: "A browser-based line-drawing tool with C++ compiled to WASM behind an HTML canvas — Command-pattern undo, Entity/Renderer separation."
+        },
+        {
             title: "ReML — Rebuilding Machine Learning from Scratch",
             description: "The goal is to deeply understand how these libraries work internally by rebuilding their components step by step, testing them against the real implementations, and documenting the learning process.",
             link: "https://github.com/karkid/ReML",
@@ -28,7 +70,7 @@ window.SITE_DATA_PROJECTS = {
             tags: ["Exploration", "Git"],
             domain: "Machine Learning, Deep Learning, Library Development",
             pinned: true,
-            purpose: "Rebuilding PyTorch and TensorFlow components from scratch to develop a deep understanding of the algorithms, data structures, and design patterns that make ML libraries efficient."
+            purpose: "Rebuilding NumPy, SciPy, scikit-learn, and PyTorch components from scratch to develop a deep understanding of the algorithms, data structures, and design patterns that make ML libraries efficient."
         },
         {
             title: "PDDL Planner",
@@ -45,9 +87,9 @@ window.SITE_DATA_PROJECTS = {
             purpose: "Built to explore automated planning techniques and domain modeling using PDDL as part of my AI coursework."
         },
         {
-            title: "CAD in Cloud",
-            description: "The idea here is to implement a CAD rendering engine on cloud to support and achieve the functionality of 'Anyplace, Anywhere and Anytime'. We use DXF drawing for this project.",
-            link: "https://github.com/karkid/CADInColud",
+            title: "CADInCloud",
+            description: "Browser-based CAD viewer for DXF drawings — parses, vectorizes, and renders CAD geometry in 3D with Three.js.",
+            link: "https://github.com/karkid/CADInCloud",
             status: "Completed",
             Repo: "Public",
             owner: "Dheeraj Karki",
