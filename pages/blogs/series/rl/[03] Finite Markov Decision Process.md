@@ -22,7 +22,7 @@ Now, Chapter 3 introduces:
 * The Markov property
 * Bellman equations
 
-👉 This is the foundation of almost all classical RL methods. 
+This is the foundation of almost all classical RL methods. 
 
 If Chapter 2 was a toy model,
 **Chapter 3 is the first real mathematical model of RL.**
@@ -46,7 +46,7 @@ At each step:
 * Action → up / down / left / right
 * Reward → `-1` per step, `+10` at goal
 
-💡 Key Idea:
+Key Idea:
 
 > The value of an action depends on the current state.
 
@@ -97,7 +97,7 @@ P(S_{t+1}, R_{t+1} | S_t, A_t, history)
 P(S_{t+1}, R_{t+1} | S_t, A_t)
 $$
 
-💡 Important:
+Important:
 
 * This does not mean the past is irrelevant in reality. It means the state has been defined richly enough to summarize the relevant past.
 * The state must contain **all relevant information from the past**
@@ -112,7 +112,7 @@ $$
 π(a | s) = P(A_t = a | S_t = s)
 $$
 
-👉 It tells us what action to take in each state.
+It tells us what action to take in each state.
 
 ---
 
@@ -142,7 +142,7 @@ $$
 v_π(s) = E_π [G_t | S_t = s]
 $$
 
-👉 Expected return starting from state `s`
+Expected return starting from state `s`
 
 ### Action-Value Function
 
@@ -150,7 +150,7 @@ $$
 q_π(s, a) = E_π [G_t | S_t = s, A_t = a]
 $$
 
-👉 Expected return after taking action `a` in state `s`
+Expected return after taking action `a` in state `s`
 
 ---
 
@@ -180,7 +180,7 @@ Where,
 - $\gamma$: discount factor
 
 
-💡 Intuition:
+Intuition:
 
 > Value = expected immediate reward + discounted future value
 
@@ -232,7 +232,7 @@ q^*(s, a) =
 \left[ r + \gamma \max_{a'} q^*(s', a') \right]
 $$
 
-💡 Key Shift:
+Key Shift:
 
 * Expectation → **Prediction**
 * Max → **Control**
@@ -287,8 +287,8 @@ $$
 | Delayed rewards | ❌       | ✅    |
 | Planning needed | ❌       | ✅    |
 
-👉 Bandits: *Which action is best?*
-👉 MDPs: *What should I do given this situation?*
+Bandits: *Which action is best?*
+MDPs: *What should I do given this situation?*
 
 ---
 
@@ -313,22 +313,22 @@ Two key problems:
 * No terminal state
 * Example: servers, robots, systems
 
-👉 Discount factor is crucial here.
+Discount factor is crucial here.
 
 ---
 
 ## Common Confusions
 
-❌ State = observation
+State = observation
 ✔️ State must encode all relevant history
 
-❌ Markov = no memory
+Markov = no memory
 ✔️ State *contains* the memory
 
-❌ Value = immediate reward
+Value = immediate reward
 ✔️ Value = long-term return
 
-❌ Bellman = algorithm
+Bellman = algorithm
 ✔️ Bellman = relationship (algorithms come later)
 
 ---
@@ -379,7 +379,7 @@ mindmap
     - Bandit → action → reward (no future consequences)
     - MDP → action → reward + next state → affects future decisions
 
-👉 Key idea: MDP = decisions that shape the future
+Key idea: MDP = decisions that shape the future
 
 ### (Meaning of $𝑝(𝑠′,𝑟∣𝑠,𝑎)$)
 

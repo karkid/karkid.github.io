@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog | {Name}</title>
     <script src="../resources/js/site-head.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <style>
+        .blog-article .katex-display { overflow-x: auto; overflow-y: hidden; padding: 0.3em 0; }
+        .blog-article .mermaid { display: flex; justify-content: center; margin: 1.5em 0; }
         .blog-article {
             max-width: 720px;
             margin: 0 auto;
@@ -67,7 +70,7 @@
 
         <section class="section-block">
             <div class="container">
-                <a href="blogs.html" class="item-link blog-back-link">← Back to Talks &amp; Blogs</a>
+                <a href="blogs.html" class="item-link blog-back-link">← Back to Talks &amp; Writing</a>
                 <article class="blog-article" id="blogContent" aria-live="polite">
                     <p class="blog-viewer-error">Loading content…</p>
                 </article>
@@ -80,6 +83,9 @@
 
     <script src="../resources/js/site-bootstrap.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <script>
         (function () {
             const params = new URLSearchParams(window.location.search);
@@ -124,6 +130,35 @@
                         contentEl.innerHTML = window.marked.parse(md);
                     } else {
                         contentEl.innerHTML = "<pre>" + md.replace(/</g, "&lt;") + "</pre>";
+                        return;
+                    }
+
+                    // Mermaid: marked leaves ```mermaid blocks as <pre><code class="language-mermaid">.
+                    // Convert those to the plain <pre class="mermaid"> markup mermaid.js expects, then render.
+                    contentEl.querySelectorAll("code.language-mermaid").forEach(function (codeEl) {
+                        const pre = document.createElement("pre");
+                        pre.className = "mermaid";
+                        pre.textContent = codeEl.textContent;
+                        codeEl.parentElement.replaceWith(pre);
+                    });
+                    if (window.mermaid) {
+                        window.mermaid.initialize({
+                            startOnLoad: false,
+                            theme: "dark",
+                            themeVariables: { mainBkg: "#0f172a", background: "transparent" }
+                        });
+                        window.mermaid.run({ querySelector: ".mermaid" });
+                    }
+
+                    // Math: render $$...$$ and $...$ in place.
+                    if (window.renderMathInElement) {
+                        window.renderMathInElement(contentEl, {
+                            delimiters: [
+                                { left: "$$", right: "$$", display: true },
+                                { left: "$", right: "$", display: false }
+                            ],
+                            throwOnError: false
+                        });
                     }
                 })
                 .catch(function () {

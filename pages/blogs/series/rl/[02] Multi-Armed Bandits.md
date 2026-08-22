@@ -104,7 +104,7 @@ $$
 
 * Always choose the current best estimate
 
-🚨 Problem:
+Problem:
 
 * Early wrong estimates → permanently wrong behavior
 
@@ -404,21 +404,21 @@ $$
 
 ### Bandits = RL?
 
-❌ No
+No
 Bandits have no states or long-term effects.
 
 ---
 
 ### Exploration = Random forever?
 
-❌ No
+No
 Good exploration becomes more focused over time.
 
 ---
 
 ### Incremental Update = Just a trick?
 
-❌ No
+No
 
 $$
 \text{estimate} \leftarrow \text{estimate} + \text{step size} \times \text{error}
@@ -430,20 +430,20 @@ This is the **core learning rule in RL**.
 
 ### Optimistic Initialization Solves Exploration?
 
-❌ Only early-stage exploration.
+Only early-stage exploration.
 
 ---
 
 ### UCB is Random?
 
-❌ No
+No
 It is guided by **uncertainty**.
 
 ---
 
 ### Gradient Bandits Estimate Values?
 
-❌ No
+No
 They directly learn policies.
 
 ---
